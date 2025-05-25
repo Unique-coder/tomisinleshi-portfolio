@@ -17,13 +17,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Builder & Developer",
-  description: "Personal website showcasing my work, thoughts, and experiences in technology and startups.",
+  title: "Tomisin Leshi – CTO & Lead Engineer",
+  description: "Tomisin Leshi – CTO @ LINK | Full-Stack & Blockchain Engineer. Building scalable fintech, Web3, and AI-powered platforms for SMEs and global payments.",
+  keywords: "Tomisin Leshi, CTO, Full-Stack Developer, Backend Engineer, Blockchain, Web3, Fintech, SME Payments, AI",
+  authors: [{ name: "Tomisin Leshi" }],
   openGraph: {
-    title: "Your Name - Builder & Developer",
-    description: "Personal website showcasing my work, thoughts, and experiences in technology and startups.",
-    url: 'https://yourwebsite.com',
-    siteName: 'Your Name',
+    title: "Tomisin Leshi – CTO & Lead Engineer",
+    description: "Leading on-chain FX, stablecoin ramps, and scalable APIs for global payments and SMEs.",
+    url: 'https://tomisinleshi.com',
+    siteName: 'Tomisin Leshi',
     images: [
       {
         url: '/og-image.png',
@@ -36,9 +38,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Your Name - Builder & Developer",
-    description: "Personal website showcasing my work, thoughts, and experiences in technology and startups.",
-    creator: '@yourtwitterhandle',
+    title: "Tomisin Leshi – CTO & Lead Engineer",
+    description: "Building secure, scalable fintech and Web3 platforms for SMEs and global payments.",
+    creator: '@TommLesh',
+    images: ['/twitter-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
@@ -49,8 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

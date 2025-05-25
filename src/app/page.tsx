@@ -21,8 +21,8 @@ export default function Home() {
               </div>
               <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-accent hidden md:block">
                 <Image
-                  src="/profile.jpg"
-                  alt="Profile"
+                  src="/assets/profile2.jpeg"
+                  alt="Tomisin Leshi"
                   fill
                   className="object-cover"
                   priority
@@ -33,26 +33,26 @@ export default function Home() {
               I'm a backend-focused full-stack developer and technical leader with over 5 years of experience building secure, scalable systems in payments, fintech, and AI. Currently CTO at LINK—powering global FX transactions on-chain.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link 
-                href={socialLinks.linkedin} 
-                target="_blank" 
+              <Link
+                href={socialLinks.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               >
                 Connect on LinkedIn
               </Link>
-              <Link 
-                href="/highlights" 
+              <Link
+                href="/highlights"
                 className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               >
                 View History
               </Link>
             </div>
           </div>
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-accent md:hidden">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-accent hidden">
             <Image
-              src="/profile.jpg"
-              alt="Profile"
+              src="/assets/profile2.jpeg"
+              alt="Tomisin Leshi"
               fill
               className="object-cover"
               priority
@@ -79,22 +79,22 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
-                <Link 
-                  href={currentWork.company.link} 
-                  target="_blank" 
+                <Link
+                  href={currentWork.company.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-primary hover:underline"
                 >
                   Visit Website →
                 </Link>
               </div>
-              
+
               <div className="rounded-lg border bg-card text-card-foreground p-6">
                 <h3 className="text-lg font-semibold mb-4">Projects</h3>
                 <div className="space-y-3">
                   {currentWork.projects.map((project, index) => (
-                    <Link 
-                      key={index} 
+                    <Link
+                      key={index}
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -128,9 +128,9 @@ export default function Home() {
                       </ul>
                     )}
                     {role.link && role.link !== '#' && (
-                      <Link 
-                        href={role.link} 
-                        target="_blank" 
+                      <Link
+                        href={role.link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-medium text-primary hover:underline mt-2 inline-block"
                       >
