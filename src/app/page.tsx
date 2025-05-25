@@ -16,7 +16,7 @@ export default function Home() {
                   Tomisin Leshi
                 </h1>
                 <h2 className="text-2xl text-muted-foreground">
-                  CTO @ LINK | Builder | Fintech Enthusiast | Technical Advisor
+                  CTO @ LINK | Builder | Technical Advisor | Forex Trader.
                 </h2>
               </div>
               <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-accent hidden md:block">
@@ -30,7 +30,8 @@ export default function Home() {
               </div>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a backend-focused full-stack developer and technical leader with over 5 years of experience building secure, scalable systems in payments, fintech, and AI. Currently CTO at LINK—powering global FX transactions on-chain.
+              Driven by curiosity — the kind that pokes, pulls, and unpacks the world until it makes sense. A thinker who writes, a builder who questions, and a problem solver at heart. I chase clarity.Whether it’s code, currencies, or chaos, I’m drawn to understanding how systems work — and then making them better. <br />
+              {/* A scribe of ideas and a magnet for problems that need solving, I’m endlessly fascinated by systems — human, technical, financial. I build, write, and explore to understand. Because knowing why things work is my favorite kind of power. */}
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link
@@ -61,7 +62,10 @@ export default function Home() {
         </section>
 
         <section className="space-y-8">
-          <h2 className="text-2xl font-semibold tracking-tight">Current Work</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Current Role</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+           A backend-focused full-stack developer and technical leader with over 5 years of experience <br/> building secure, scalable systems in payments, SaaS, and AI. Currently building global FX transactions on-chain.
+           </p>
           <div className="grid gap-8 md:grid-cols-2">
             {/* Current Role and Projects */}
             <div className="space-y-6">

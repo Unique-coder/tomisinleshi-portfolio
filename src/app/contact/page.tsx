@@ -8,7 +8,7 @@ export default function Contact() {
       <Header />
       <main className="container py-16 max-w-2xl">
         <div className="space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight">Contact</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Lets Talk</h1>
           <p className="text-lg text-muted-foreground">
             Have a question or want to work together? Feel free to reach out using
             the form below or directly via{' '}
@@ -24,7 +24,7 @@ export default function Contact() {
               href={socialLinks.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary"
+              className="text-muted-foreground hover:text-primary hover:underline underline-offset-4"
             >
               Twitter
             </a>
@@ -32,7 +32,7 @@ export default function Contact() {
               href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary"
+              className="text-muted-foreground hover:text-primary hover:underline underline-offset-4"
             >
               GitHub
             </a>
@@ -40,7 +40,7 @@ export default function Contact() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary"
+              className="text-muted-foreground hover:text-primary hover:underline underline-offset-4"
             >
               LinkedIn
             </a>
