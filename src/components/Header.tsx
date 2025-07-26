@@ -7,7 +7,7 @@ import { socialLinks } from '@/constants';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Highlights', href: '/highlights' },
+  // { name: 'Highlights', href: '/highlights' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -16,13 +16,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold hidden md:inline">Tomisin Leshi</span>
+    <div className="mx-auto w-[80vw] max-w-xl sm:w-[75vw] sm:max-w-2xl md:w-[60vw] md:max-w-3xl lg:w-[55vw] flex h-16 items-center justify-between px-4">
+        <div className="flex w-full items-center">
+          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+            <span className="font-bold hidden md:inline">TL</span>
             <span className="font-bold text-xl md:hidden">TL</span>
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-4 text-sm font-medium ml-6">
             {navigation.map((item) => (
               <Link
                 key={item.href}
