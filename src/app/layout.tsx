@@ -17,13 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tomisin Leshi – CTO & Lead Engineer",
-  description: "Tomisin Leshi – CTO @ LINK | Full-Stack & Blockchain Engineer. Building scalable fintech, Web3, and AI-powered platforms for SMEs and global payments.",
+  title: "Tomisin Leshi – Software Engineer",
+  description: "Tomisin Leshi – Lead Software Engineer @ LINK | Full-Stack & Blockchain Engineer. Building scalable fintech, Web3, and AI-powered platforms for SMEs and global payments.",
   keywords: "Tomisin Leshi, CTO, Full-Stack Developer, Backend Engineer, Blockchain, Web3, Fintech, SME Payments, AI",
   authors: [{ name: "Tomisin Leshi" }],
   openGraph: {
-    title: "Tomisin Leshi – CTO & Lead Engineer",
-    description: "Leading on-chain FX, stablecoin ramps, and scalable APIs for global payments and SMEs.",
+    title: "Tomisin Leshi – Software Engineer",
+    description: "Building secure, scalable fintech and Web3 platforms for SMEs and global payments.",
     url: 'https://tomisinleshi.com',
     siteName: 'Tomisin Leshi',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tomisin Leshi – CTO & Lead Engineer",
+    title: "Tomisin Leshi – Software Engineer",
     description: "Building secure, scalable fintech and Web3 platforms for SMEs and global payments.",
     creator: '@TommLesh',
     images: ['/twitter-image.png'],

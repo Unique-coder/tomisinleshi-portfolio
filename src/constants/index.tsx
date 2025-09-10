@@ -97,7 +97,7 @@ export const features = [
 export const currentWork = {
   company: {
     name: 'LINK',
-    role: 'Chief Technology Officer',
+    role: 'Lead Software Engineer',
     period: 'Oct 2021 - Present',
     description: 'Leading the technical vision and development of an on-chain FX platform powering global stablecoin payments.',
     achievements: [

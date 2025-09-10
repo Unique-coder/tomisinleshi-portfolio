@@ -13,13 +13,13 @@ export default function Home() {
             Tomisin Leshi
           </h1>
           <h2 className="text-xl text-muted-foreground">
-            Full-Stack Lead Engineer, | Technical Advisor | Trader
+            Full-Stack Lead Engineer | Technical Advisor | Forex Trader
           </h2>
           <div className="space-y-1">
             <div className="text-lg font-semibold">Hey there,</div>
             <div className="font-semibold">About Me:</div>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Driven by curiosity — the kind that pokes, pulls, and unpacks the world until it makes sense. A thinker who writes, a builder who questions, and a problem solver at heart. Whether it’s code, currencies, or chaos, I’m drawn to understanding how systems work and then making them better.
+              Driven by curiosity, the kind that pokes, pulls, and unpacks the world until it makes sense. A thinker who writes, a builder who questions, and a problem solver at heart. Whether it’s code, currencies, or chaos, I’m drawn to understanding how systems work and then making them better.
             </p>
           </div>
           {/* <div className="flex flex-wrap gap-4 pt-4">
