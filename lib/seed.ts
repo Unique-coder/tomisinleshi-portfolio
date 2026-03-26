@@ -186,7 +186,6 @@ const bookData = [
 
   // ─── FICTION — TO READ (status: 'to_read') ───
   { title: '19th Christmas', author: 'James Patterson', category: 'fiction', status: 'to_read' },
-  { title: 'The Count of Monte Cristo', author: 'Alexandre Dumas', category: 'fiction', status: 'to_read' },
 ];
 
 async function seed() {

@@ -2,7 +2,11 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: 'class',
-  content: ['./app/**/*.{ts,tsx}', './src/app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -22,6 +26,12 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Tahoma', 'Geneva', 'sans-serif'],
+      },
+      keyframes: {
+        fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.2s ease forwards',
       },
     },
   },
