@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 export function useTheme() {
   const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') return false;
     // Check localStorage first, fallback to system preference
     const stored = localStorage.getItem('theme');
     if (stored) {

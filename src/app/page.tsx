@@ -1,0 +1,95 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tomisin Leshi',
+};
+
+const socialLinks = [
+  { label: 'Twitter', href: 'https://twitter.com/tomlesh' },
+  { label: 'GitHub', href: 'https://github.com/tomisinleshi' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/tomisin-leshi' },
+  { label: 'Substack', href: 'https://substack.com/@tomlesh' },
+];
+
+const labelClass = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF] mb-2 block';
+
+export default function AboutPage() {
+  return (
+    <div>
+      {/* Name */}
+      <h1 className="font-serif text-[2rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1 leading-tight">
+        Tomisin Leshi
+      </h1>
+
+      {/* Pronunciation */}
+      <p className="text-[13px] text-[#9CA3AF] mb-1 italic">
+        /toh&middot;mi&middot;sin leh&middot;shi/
+      </p>
+
+      {/* Part of speech */}
+      <p className="text-[13px] text-[#9CA3AF] italic mb-6">noun</p>
+
+      {/* Definitions */}
+      <div className="flex flex-col gap-4 mb-10 leading-[1.7] text-[14px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <p>
+          <span className="mr-2">1.</span>
+          Pattern thinker. I find the structure underneath the problem. In systems,
+          markets, and conversations, I find the move that changes everything.
+        </p>
+        <p>
+          <span className="mr-2">2.</span>
+          Co-Founder and CTO at LINK. Building cross-border payment rails across
+          African markets. Self-taught. Still figuring things out.
+        </p>
+        <p>
+          <span className="mr-2">3.</span>
+          Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
+        </p>
+      </div>
+
+      {/* SEE ALSO */}
+      <div className="border-t border-[var(--border)] pt-5 mb-6">
+        <span className={labelClass}>See also</span>
+        <div className="flex gap-4 flex-wrap text-[13px]">
+          {socialLinks.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* LET'S TALK */}
+      <div className="border-t border-[var(--border)] pt-5 mb-6">
+        <span className={labelClass}>Let&apos;s talk</span>
+        <a
+          href="https://cal.com/tomisin-leshi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[13px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+        >
+          cal.com/tomisin-leshi
+        </a>
+      </div>
+
+      {/* CURRENTLY */}
+      <div className="border-t border-[var(--border)] pt-5">
+        <span className={labelClass}>Currently</span>
+        <div className="flex flex-col gap-3 leading-[1.7] text-[14px] text-[#343D4D] dark:text-[#F5F0E8]">
+          <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
+          <p>
+            Thinking about kingdom financing. What it means to build infrastructure
+            with purpose, not just returns. Paying close attention to where trust
+            moves in systems before contracts do.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

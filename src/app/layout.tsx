@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Sidebar from '@/components/Sidebar';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,13 +14,7 @@ export const metadata: Metadata = {
     description: "Building secure, scalable fintech and Web3 platforms for SMEs and global payments.",
     url: 'https://tomisinleshi.dev',
     siteName: 'Tomisin Leshi',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     locale: 'en-US',
     type: 'website',
   },
@@ -30,9 +25,7 @@ export const metadata: Metadata = {
     creator: '@TommLesh',
     images: ['/twitter-image.png'],
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({
@@ -46,7 +39,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="antialiased min-h-screen" suppressHydrationWarning>
-        {children}
+        <Sidebar />
+        {/* Mobile: pad top for fixed top bar */}
+        <main className="md:ml-[160px] pt-[80px] md:pt-0">
+          <div className="max-w-[640px] mx-auto px-8 py-12 animate-fade-in">
+            {children}
+          </div>
+        </main>
         <Analytics />
         <SpeedInsights />
       </body>
