@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ThemeProvider } from '@/providers/ThemeProvider';
-import "./tailwind.css";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Tomisin Leshi – Software Engineer",
@@ -24,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tomisin Leshi – Software Engineer",
     description: "Building secure, scalable fintech and Web3 platforms for SMEs and global payments.",
-    url: 'https://tomisinleshi.com',
+    url: 'https://tomisinleshi.dev',
     siteName: 'Tomisin Leshi',
     images: [
       {
@@ -58,20 +45,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
-        suppressHydrationWarning
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+      <body className="antialiased min-h-screen" suppressHydrationWarning>
+        {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
