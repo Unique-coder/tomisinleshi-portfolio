@@ -189,6 +189,11 @@ const bookData = [
 ];
 
 async function seed() {
+  const existing = await db.select().from(books).limit(1);
+  if (existing.length > 0) {
+    console.log('Books table already seeded, skipping.');
+    return;
+  }
   console.log('Seeding books table...');
   await db.insert(books).values(bookData);
   console.log(`Seeded ${bookData.length} books.`);

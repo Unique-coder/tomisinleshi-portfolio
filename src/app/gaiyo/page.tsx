@@ -6,10 +6,26 @@ export const metadata: Metadata = {
 };
 
 const accomplishments = [
-  'Two-time Stellar Community Fund award winner with LINK',
-  'Placed first for Consumer App at the Base Hackathon in Africa',
-  'Speaker at Stellar Meridian',
-  'Mentor at DFS Labs',
+  {
+    title: 'Three-time Stellar Community Fund awardee',
+    detail: 'SCF #10 · SCF #15 · SCF #28 — $277K+ total with LINK',
+  },
+  {
+    title: 'First Place, Base Batch Europe',
+    detail: 'Consumer App — LINK Checkout by LINK',
+  },
+  {
+    title: 'XRPL Accelerator — Cohort 5',
+    detail: '$150K grant · Ripple · London',
+  },
+  {
+    title: 'Speaker at Stellar Meridian',
+    detail: null,
+  },
+  {
+    title: 'Mentor at DFS Labs',
+    detail: null,
+  },
 ];
 
 export default function GaiyoPage() {
@@ -36,13 +52,12 @@ export default function GaiyoPage() {
           solution stop working at scale? That habit of pulling at threads led me
           through robotics labs building underwater vehicle systems, through
           architecting APIs for SME software, and eventually to the thing I
-          couldn&apos;t unsee: cross-border payments across Africa were broken at the
+          couldn't unsee: cross-border payments across Africa were broken at the
           foundation.
         </p>
         <p>
           I trade markets for the same reason I build systems. Pattern recognition is
-          the function. The environment changes &mdash; code, charts, conversations &mdash;
-          but the skill transfers.
+          the function. The environment changes code, charts, conversations but the skill transfers.
         </p>
         <p>
           I am Nigerian. I grew up watching what happens when financial infrastructure
@@ -66,15 +81,22 @@ export default function GaiyoPage() {
           />
 
           {accomplishments.map((item) => (
-            <div key={item} className="flex items-start gap-5 mb-6 last:mb-0">
+            <div key={item.title} className="flex items-start gap-5 mb-6 last:mb-0">
               {/* Dot column — 20px wide, dot centered → center at 10px = line position */}
               <div className="w-5 flex-shrink-0 flex justify-center mt-[6px]">
                 <div className="w-[9px] h-[9px] rounded-full bg-[#343D4D] dark:bg-[#F5F0E8]" />
               </div>
               {/* Text */}
-              <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
-                {item}
-              </span>
+              <div>
+                <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
+                  {item.title}
+                </span>
+                {item.detail && (
+                  <span className="block text-[12px] text-[#9CA3AF] mt-[2px]">
+                    {item.detail}
+                  </span>
+                )}
+              </div>
             </div>
           ))}
         </div>

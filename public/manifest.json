@@ -1,0 +1,18 @@
+{
+  "name": "Tomisin Leshi",
+  "short_name": "TL",
+  "description": "Co-Founder & CTO at LINK. Building cross-border payment rails across African markets.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#343D4D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -25,7 +25,11 @@ export const metadata: Metadata = {
     creator: '@TommLesh',
     images: ['/twitter-image.png'],
   },
-  icons: { icon: '/favicon.ico' },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
+  manifest: '/manifest.json',
 };
 export default function RootLayout({
   children,
@@ -35,7 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="theme-color" content="#F5F0E8" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#343D4D" media="(prefers-color-scheme: dark)" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Tomisin Leshi" />
       </head>
       <body className="antialiased min-h-screen" suppressHydrationWarning>
         <Sidebar />

@@ -8,10 +8,10 @@ import { useTheme } from '../../hooks/useTheme';
 
 const navLinks = [
   { label: 'ABOUT', href: '/' },
+  { label: 'GAIYŌ', href: '/gaiyo' },
   { label: 'BOOKSHELF', href: '/bookshelf' },
   { label: 'WRITING', href: '/writing' },
   { label: 'EXPLORING', href: '/exploring' },
-  { label: 'GAIYŌ', href: '/gaiyo' },
 ];
 
 const socialLinks = [
@@ -48,7 +48,7 @@ export default function Sidebar() {
       >
         {/* TL initials */}
         <div className="mb-10">
-          <span className="font-serif text-sm font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+          <span className="font-serif text-lg font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
             TL
           </span>
         </div>

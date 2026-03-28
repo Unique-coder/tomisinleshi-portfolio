@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import BookshelfClient from '@/components/BookshelfClient';
 import type { Book } from '../../../lib/schema';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Bookshelf \u2014 Tomisin Leshi',
 };
@@ -12,7 +14,8 @@ async function getBooks(): Promise<Book[]> {
     const { books } = await import('../../../lib/schema');
     const { asc } = await import('drizzle-orm');
     return await db.select().from(books).orderBy(asc(books.title));
-  } catch {
+  } catch (error) {
+    console.error('Failed to fetch books:', error);
     return [];
   }
 }
