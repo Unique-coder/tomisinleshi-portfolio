@@ -16,8 +16,8 @@ const bookData = [
   { title: 'The Power of Discipline', author: null, category: 'mindset', status: 'read' },
   { title: '48 Laws of Power', author: 'Robert Greene', category: 'mindset', status: 'read' },
   { title: 'The Art of Seduction', author: 'Robert Greene', category: 'mindset', status: 'read' },
-  { title: 'The Rules of Wealth', author: 'Richard Templar', category: 'mindset', status: 'reading' },
-  { title: 'The Rules of Thinking', author: 'Richard Templar', category: 'mindset', status: 'reading' },
+  { title: 'The Rules of Wealth', author: 'Richard Templar', category: 'mindset', status: 'read' },
+  { title: 'The Rules of Thinking', author: 'Richard Templar', category: 'mindset', status: 'read' },
   { title: 'Rework', author: 'Jason Fried', category: 'mindset', status: 'read' },
   { title: 'The Power of Habits', author: 'Charles Duhigg', category: 'mindset', status: 'read' },
   { title: 'The Art of Laziness', author: 'Library Mindset', category: 'mindset', status: 'read' },
@@ -61,7 +61,7 @@ const bookData = [
   { title: 'The Psychology of Laziness', author: 'Mohammad Shakeel', category: 'mindset', status: 'to_read' },
   { title: 'Master Your Mindset', author: null, category: 'mindset', status: 'to_read' },
   { title: 'The Courage to Be Disliked', author: 'Ichiro Kishimi', category: 'mindset', status: 'to_read' },
-  { title: 'The Art of Being Alone', author: 'Gavrani', category: 'mindset', status: 'to_read' },
+  { title: 'The Art of Being Alone', author: 'Gavrani', category: 'mindset', status: 'reading' },
   { title: 'Power of Ignored Skills', author: 'Manoj', category: 'mindset', status: 'to_read' },
   { title: 'Trading for a Living', author: null, category: 'mindset', status: 'to_read' },
   { title: 'The Mental Game of Trading', author: null, category: 'mindset', status: 'to_read' },
@@ -121,6 +121,9 @@ const bookData = [
   { title: 'Super Founders', author: 'Ali Tamaseb', category: 'mindset', status: 'to_read' },
   { title: 'Algorithms to Live By', author: 'Brian Christian', category: 'mindset', status: 'to_read' },
   { title: 'Enlightenment Now', author: 'Steven Pinker', category: 'mindset', status: 'to_read' },
+  { title: 'Frederick Douglass: Prophet of Freedom', author: 'David Blight', category: 'mindset', status: 'to_read' },
+  { title: 'The New Jim Crow', author: 'Michelle Alexander', category: 'mindset', status: 'to_read' },
+  { title: 'The Black Jacobins', author: 'C.L.R. James', category: 'mindset', status: 'to_read' },
 
   // ─── FICTION — READ (status: 'read') ───
   { title: 'Obsessed', author: 'Ted Dekker', category: 'fiction', status: 'read' },
@@ -186,14 +189,21 @@ const bookData = [
 
   // ─── FICTION — TO READ (status: 'to_read') ───
   { title: '19th Christmas', author: 'James Patterson', category: 'fiction', status: 'to_read' },
+  { title: 'The Warmth of Other Suns', author: 'Isabel Wilkerson', category: 'fiction', status: 'to_read' },
+  { title: 'The Vanishing Half', author: 'Brit Bennett', category: 'fiction', status: 'to_read' },
+  { title: 'Hell of a Book', author: 'Jason Mott', category: 'fiction', status: 'to_read' },
+  { title: 'The Great Believers', author: 'Rebecca Makkai', category: 'fiction', status: 'to_read' },
+  { title: 'Trust', author: 'Hernan Diaz', category: 'fiction', status: 'to_read' },
+  { title: 'Annihilation', author: 'Jeff VanderMeer', category: 'fiction', status: 'to_read' },
+  { title: 'Anxious People', author: 'Fredrik Backman', category: 'fiction', status: 'to_read' },
+  { title: 'Frankenstein', author: 'Mary Shelley', category: 'fiction', status: 'to_read' },
+  { title: 'King Lear / Othello', author: 'William Shakespeare', category: 'fiction', status: 'to_read' },
 ];
 
 async function seed() {
-  const existing = await db.select().from(books).limit(1);
-  if (existing.length > 0) {
-    console.log('Books table already seeded, skipping.');
-    return;
-  }
+  console.log('Clearing books table...');
+  const { sql } = await import('drizzle-orm');
+  await db.execute(sql`TRUNCATE TABLE books`);
   console.log('Seeding books table...');
   await db.insert(books).values(bookData);
   console.log(`Seeded ${bookData.length} books.`);

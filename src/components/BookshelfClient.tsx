@@ -36,11 +36,6 @@ const CURATED_TO_READ = [
   'Good to Great',
 ];
 
-const CURATED_ONGOING = [
-  { title: 'The Rules of Thinking', author: 'Richard Templar' },
-  { title: 'The Rules of Wealth', author: 'Richard Templar' },
-];
-
 const ITEMS_PER_PAGE = 20;
 
 function getLastName(author: string | null): string {
@@ -160,6 +155,10 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
     setPage(1);
   };
 
+  const ongoingBooks = useMemo(() => books.filter((b) => b.status === 'reading'), [books]);
+  const finishedCount = useMemo(() => books.filter((b) => b.status === 'read').length, [books]);
+  const toReadCount = useMemo(() => books.filter((b) => b.status === 'to_read').length, [books]);
+
   const labelClass = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF]';
 
   return (
@@ -242,21 +241,18 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
       {isDefaultView && (
         <div>
           {/* ONGOING */}
-          <div className="mb-8">
-            <p className={`${labelClass} mb-3`}>ONGOING (2)</p>
-            {CURATED_ONGOING.map((b) => (
-              <div key={b.title} className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
-                <span className="text-[8px] text-[#9CA3AF] mr-3 leading-none flex-shrink-0">◑</span>
-                <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8]">{b.title}</span>
-                <span className="text-[15px] text-[#9CA3AF] mx-1">·</span>
-                <span className="text-[14px] text-[#9CA3AF]">{b.author}</span>
-              </div>
-            ))}
-          </div>
+          {ongoingBooks.length > 0 && (
+            <div className="mb-8">
+              <p className={`${labelClass} mb-3`}>ONGOING ({ongoingBooks.length})</p>
+              {ongoingBooks.map((b) => (
+                <BookRow key={b.id} book={b} />
+              ))}
+            </div>
+          )}
 
           {/* FINISHED */}
           <div className="mb-8">
-            <p className={`${labelClass} mb-3`}>FINISHED (108)</p>
+            <p className={`${labelClass} mb-3`}>FINISHED ({finishedCount})</p>
             {CURATED_FINISHED.map((title) => {
               const book = books.find((b) => b.title === title);
               return (
@@ -276,13 +272,13 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               onClick={handleViewAllFinished}
               className="mt-3 text-[12px] text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
             >
-              View all finished (108)
+              View all finished ({finishedCount})
             </button>
           </div>
 
           {/* TO READ */}
           <div className="mb-8">
-            <p className={`${labelClass} mb-3`}>TO READ (63)</p>
+            <p className={`${labelClass} mb-3`}>TO READ ({toReadCount})</p>
             {CURATED_TO_READ.map((title) => {
               const book = books.find((b) => b.title === title);
               return (
@@ -302,7 +298,7 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               onClick={handleViewAllToRead}
               className="mt-3 text-[12px] text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
             >
-              View all to read (63)
+              View all to read ({toReadCount})
             </button>
           </div>
         </div>
