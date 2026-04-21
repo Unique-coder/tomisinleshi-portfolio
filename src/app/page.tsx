@@ -30,7 +30,7 @@ export default function AboutPage() {
       <p className="text-[13px] text-[#9CA3AF] italic mb-6">noun</p>
 
       {/* Definitions */}
-      <div className="flex flex-col gap-4 mb-10 leading-[1.7] text-[14px] text-[#343D4D] dark:text-[#F5F0E8]">
+      <div className="flex flex-col gap-4 mb-10 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
         <p>
           <span className="mr-2">1.</span>
           Pattern thinker. I find the structure underneath the problem. In systems,
@@ -50,17 +50,19 @@ export default function AboutPage() {
       {/* SEE ALSO */}
       <div className="border-t border-[var(--border)] pt-5 mb-6">
         <span className={labelClass}>See also</span>
-        <div className="flex gap-4 flex-wrap text-[13px]">
-          {socialLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-            >
-              {label}
-            </a>
+        <div className="flex items-center gap-3 flex-wrap">
+          {socialLinks.map(({ label, href }, i) => (
+            <span key={label} className="flex items-center gap-3">
+              {i > 0 && <span className="text-[#D1D5DB] dark:text-[#4A5568] select-none">|</span>}
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+              >
+                {label}
+              </a>
+            </span>
           ))}
         </div>
       </div>
@@ -72,7 +74,7 @@ export default function AboutPage() {
           href="https://cal.com/tomisin-leshi"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[13px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+          className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
         >
           cal.com/tomisin-leshi
         </a>
@@ -81,7 +83,7 @@ export default function AboutPage() {
       {/* CURRENTLY */}
       <div className="border-t border-[var(--border)] pt-5">
         <span className={labelClass}>Currently</span>
-        <div className="flex flex-col gap-3 leading-[1.7] text-[14px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
           <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
           <p>
             Thinking about kingdom financing. What it means to build infrastructure

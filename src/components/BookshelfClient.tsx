@@ -58,11 +58,11 @@ function BookRow({ book }: { book: Book }) {
   return (
     <div className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
       <StatusDot status={book.status} />
-      <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8]">{book.title}</span>
+      <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{book.title}</span>
       {book.author && (
         <>
-          <span className="text-[15px] text-[#9CA3AF] mx-1">·</span>
-          <span className="text-[14px] text-[#9CA3AF]">{book.author}</span>
+          <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
+          <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
         </>
       )}
     </div>
@@ -258,11 +258,11 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               return (
                 <div key={title} className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
                   <span className="text-[8px] text-[#343D4D] dark:text-[#F5F0E8] mr-3 leading-none flex-shrink-0">●</span>
-                  <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
+                  <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
                   {book?.author && (
                     <>
-                      <span className="text-[15px] text-[#9CA3AF] mx-1">·</span>
-                      <span className="text-[14px] text-[#9CA3AF]">{book.author}</span>
+                      <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
+                      <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
                     </>
                   )}
                 </div>
@@ -284,11 +284,11 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               return (
                 <div key={title} className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
                   <span className="text-[8px] text-[#9CA3AF] mr-3 leading-none flex-shrink-0">○</span>
-                  <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
+                  <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
                   {book?.author && (
                     <>
-                      <span className="text-[15px] text-[#9CA3AF] mx-1">·</span>
-                      <span className="text-[14px] text-[#9CA3AF]">{book.author}</span>
+                      <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
+                      <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
                     </>
                   )}
                 </div>

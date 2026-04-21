@@ -50,8 +50,8 @@ export default function RootLayout({
       <body className="antialiased min-h-screen" suppressHydrationWarning>
         <Sidebar />
         {/* Mobile: pad top for fixed top bar */}
-        <main className="md:ml-[160px] pt-[80px] md:pt-0">
-          <div className="max-w-[640px] mx-auto px-8 py-12 animate-fade-in">
+        <main className="md:ml-[200px] pt-[80px] md:pt-0">
+          <div className="max-w-[680px] mx-auto px-8 py-12 animate-fade-in">
             {children}
           </div>
         </main>

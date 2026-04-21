@@ -29,7 +29,7 @@ export default async function BookshelfPage() {
       <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
         Bookshelf
       </h1>
-      <p className="text-[13px] text-[#9CA3AF] mb-8">
+      <p className="text-[15px] text-[#9CA3AF] mb-8">
         Books I&apos;ve read, and books I intend to.
       </p>
 

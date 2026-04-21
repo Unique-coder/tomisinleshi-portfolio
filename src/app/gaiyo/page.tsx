@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 const accomplishments = [
   {
     title: 'Three-time Stellar Community Fund awardee',
-    detail: 'SCF #10 · SCF #15 · SCF #28 — $277K+ total with LINK',
+    detail: 'SCF #10 · SCF #15 · SCF #28 · $277K+ total with LINK',
   },
   {
     title: 'First Place, Base Batch Europe',
-    detail: 'Consumer App — LINK Checkout by LINK',
+    detail: 'Consumer App · LINK Checkout by LINK',
   },
   {
-    title: 'XRPL Accelerator — Cohort 5',
+    title: 'XRPL Accelerator · Cohort 5',
     detail: '$150K grant · Ripple · London',
   },
   {
@@ -37,10 +37,10 @@ export default function GaiyoPage() {
       </h1>
 
       {/* Subtitle */}
-      <p className="text-[13px] text-[#9CA3AF] mb-8">my story</p>
+      <p className="text-[15px] text-[#9CA3AF] mb-8">my story</p>
 
       {/* Prose */}
-      <div className="flex flex-col gap-5 leading-[1.75] text-[15px] text-[#343D4D] dark:text-[#F5F0E8] mb-2">
+      <div className="flex flex-col gap-5 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8] mb-2">
         <p>
           I didn&apos;t start as a founder. I started as someone who needed to understand
           how things worked.
@@ -88,11 +88,11 @@ export default function GaiyoPage() {
               </div>
               {/* Text */}
               <div>
-                <span className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
+                <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
                   {item.title}
                 </span>
                 {item.detail && (
-                  <span className="block text-[12px] text-[#9CA3AF] mt-[2px]">
+                  <span className="block text-[13px] text-[#9CA3AF] mt-[2px]">
                     {item.detail}
                   </span>
                 )}

@@ -40,7 +40,7 @@ export default function WritingPage() {
       <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
         Writing
       </h1>
-      <p className="text-[13px] text-[#9CA3AF] mb-8">Longer thoughts, published on X and Substack.</p>
+      <p className="text-[15px] text-[#9CA3AF] mb-8">Longer thoughts, published on X and Substack.</p>
 
       {/* Pinned */}
       <div className="mb-8">
@@ -50,11 +50,11 @@ export default function WritingPage() {
             href="https://substack.com/@tomlesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+            className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
           >
             Building Fast in the AI Space. &#x2197;
           </a>
-          <span className="block text-[11px] text-[#9CA3AF] mt-1">X</span>
+          <span className="block text-[12px] text-[#9CA3AF] mt-1">X</span>
         </div>
       </div>
 
@@ -70,13 +70,13 @@ export default function WritingPage() {
                 href={post.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[14px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline leading-[1.5]"
+                className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline leading-[1.5]"
               >
                 {post.title} &#x2197;
               </a>
-              <span className="block text-[11px] text-[#9CA3AF] mt-1">{post.source}</span>
+              <span className="block text-[12px] text-[#9CA3AF] mt-1">{post.source}</span>
             </div>
-            <span className="text-[12px] text-[#9CA3AF] whitespace-nowrap mt-[2px]">
+            <span className="text-[13px] text-[#9CA3AF] whitespace-nowrap mt-[2px]">
               {post.date}
             </span>
           </div>
