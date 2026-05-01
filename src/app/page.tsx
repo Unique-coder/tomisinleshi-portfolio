@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Tomisin Leshi',
@@ -45,6 +46,9 @@ export default function AboutPage() {
           <span className="mr-2">3.</span>
           Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
         </p>
+        <p className="text-[15px] text-[#9CA3AF] leading-[1.8]">
+          Three-time Stellar Community Fund awardee &middot; $277K+ raised &middot; First Place, Base Batch Europe &middot; Building payment rails across NGN, GHS, KES, ZAR corridors.
+        </p>
       </div>
 
       {/* SEE ALSO */}
@@ -81,7 +85,7 @@ export default function AboutPage() {
       </div>
 
       {/* CURRENTLY */}
-      <div className="border-t border-[var(--border)] pt-5">
+      <div className="border-t border-[var(--border)] pt-5 mb-6">
         <span className={labelClass}>Currently</span>
         <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
           <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
@@ -92,6 +96,35 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+      {/* Directional footer note */}
+      <p className="text-[15px] text-[#9CA3AF] leading-[1.8]">
+        I write about building, distribution, and African infrastructure. Essays on{' '}
+        <a
+          href="https://substack.com/@tomlesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+        >
+          Substack
+        </a>
+        {' '}&middot; Daily thinking on{' '}
+        <a
+          href="https://twitter.com/tomlesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+        >
+          X
+        </a>
+        {' '}&rarr;{' '}
+        <Link
+          href="/writing"
+          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
+        >
+          Writing
+        </Link>
+      </p>
     </div>
   );
 }

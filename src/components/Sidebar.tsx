@@ -10,11 +10,11 @@ import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   { label: 'ABOUT', href: '/' },
-  { label: 'BOOKSHELF', href: '/bookshelf' },
-  { label: 'WRITING', href: '/writing' },
-  { label: 'EXPLORING', href: '/exploring' },
+  { label: 'STORY', href: '/gaiyo' },
   { label: 'WORLDVIEW', href: '/worldview' },
-  { label: 'GAIYŌ', href: '/gaiyo' },
+  { label: 'WRITING', href: '/writing' },
+  { label: 'BOOKSHELF', href: '/bookshelf' },
+  { label: 'EXPLORING', href: '/exploring' },
 ];
 
 const socials = [

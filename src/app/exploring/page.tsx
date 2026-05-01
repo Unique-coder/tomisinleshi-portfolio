@@ -62,13 +62,14 @@ export default function ExploringPage() {
       </div>
 
       {/* Section 3 */}
+      <hr className="border-t border-[var(--border)] mb-10" />
       <div className="mb-10">
         <h2 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-4">
           What I&apos;m paying attention to
         </h2>
-        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
           {attentionItems.map((item) => (
-            <p key={item} className="pl-2">{item}</p>
+            <p key={item}>{item}</p>
           ))}
         </div>
       </div>

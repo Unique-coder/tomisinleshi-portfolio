@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Collapsible from '@/components/Collapsible';
 
 export const metadata: Metadata = {
-  title: 'Gaiy\u014d \u2014 Tomisin Leshi',
+  title: 'Story — Tomisin Leshi',
 };
 
 const accomplishments = [
@@ -33,48 +33,16 @@ export default function GaiyoPage() {
     <div>
       {/* Title */}
       <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
-        Gaiy&#x014D;
+        Story
       </h1>
 
       {/* Subtitle */}
       <p className="text-[15px] text-[#9CA3AF] mb-8">my story</p>
 
-      {/* Prose */}
-      <div className="flex flex-col gap-5 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8] mb-2">
-        <p>
-          I didn&apos;t start as a founder. I started as someone who needed to understand
-          how things worked.
-        </p>
-        <p>
-          I taught myself to code from the early days of Udemy and Codecademy, long
-          before university. Not because anyone told me to, but because I couldn&apos;t
-          stop asking why. Why does this system break under pressure? Why does this
-          solution stop working at scale? That habit of pulling at threads led me
-          through robotics labs building underwater vehicle systems, through
-          architecting APIs for SME software, and eventually to the thing I
-          couldn't unsee: cross-border payments across Africa were broken at the
-          foundation.
-        </p>
-        <p>
-          I trade markets for the same reason I build systems. Pattern recognition is
-          the function. The environment changes code, charts, conversations but the skill transfers.
-        </p>
-        <p>
-          I am Nigerian. I grew up watching what happens when financial infrastructure
-          does not exist for the people who need it most. That is not background noise.
-          That is direction.
-        </p>
-      </div>
-
-      {/* Collapsible: Little accomplishments — defaults open */}
-      <Collapsible label="little accomplishments" defaultOpen={true}>
-        {/*
-          Timeline: flex column — each row is [dot column | text].
-          The dot column is 20px wide; an absolute vertical line sits at
-          left-[10px] (= column center) to pass through each dot's center.
-        */}
+      {/* Milestones — moved above narrative */}
+      <Collapsible label="Milestones" defaultOpen={true}>
         <div className="relative flex flex-col mt-4">
-          {/* Full-height connecting line — from first dot to last dot */}
+          {/* Full-height connecting line */}
           <div
             className="absolute w-px bg-[#D1D5DB] dark:bg-[#4A5568]"
             style={{ left: '10px', top: '15px', bottom: '15px' }}
@@ -82,11 +50,9 @@ export default function GaiyoPage() {
 
           {accomplishments.map((item) => (
             <div key={item.title} className="flex items-start gap-5 mb-6 last:mb-0">
-              {/* Dot column — 20px wide, dot centered → center at 10px = line position */}
               <div className="w-5 flex-shrink-0 flex justify-center mt-[6px]">
                 <div className="w-[9px] h-[9px] rounded-full bg-[#343D4D] dark:bg-[#F5F0E8]" />
               </div>
-              {/* Text */}
               <div>
                 <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
                   {item.title}
@@ -101,6 +67,33 @@ export default function GaiyoPage() {
           ))}
         </div>
       </Collapsible>
+
+      {/* Prose — below milestones */}
+      <div className="flex flex-col gap-5 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8] mt-10">
+        <p>
+          I didn&apos;t start as a founder. I started as someone who needed to understand
+          how things worked.
+        </p>
+        <p>
+          I taught myself to code from the early days of Udemy and Codecademy, long
+          before university. Not because anyone told me to, but because I couldn&apos;t
+          stop asking why. Why does this system break under pressure? Why does this
+          solution stop working at scale? That habit of pulling at threads led me
+          through robotics labs building underwater vehicle systems, through
+          architecting APIs for SME software, and eventually to the thing I
+          couldn&apos;t unsee: cross-border payments across Africa were broken at the
+          foundation.
+        </p>
+        <p>
+          I trade markets for the same reason I build systems. Pattern recognition is
+          the function. The environment changes code, charts, conversations but the skill transfers.
+        </p>
+        <p>
+          I am Nigerian. I grew up watching what happens when financial infrastructure
+          does not exist for the people who need it most. That is not background noise.
+          That is direction.
+        </p>
+      </div>
     </div>
   );
 }
