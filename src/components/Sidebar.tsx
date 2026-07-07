@@ -34,6 +34,7 @@ export default function Sidebar() {
     <>
       {/* ── Desktop sidebar ── */}
       <aside
+        aria-label="Site navigation"
         className="hidden md:flex fixed left-0 top-0 h-screen w-[200px] flex-col px-6 py-8 bg-[var(--bg)] border-r border-[#E5E7EB] dark:border-[#4A5568]"
         style={{ zIndex: 50 }}
       >
@@ -46,7 +47,7 @@ export default function Sidebar() {
         </div>
 
         {/* Nav links */}
-        <nav className="flex flex-col gap-5 mb-8">
+        <nav aria-label="Primary" className="flex flex-col gap-5 mb-8">
           {navLinks.map(({ label, href }) => {
             const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
             return (
@@ -113,7 +114,7 @@ export default function Sidebar() {
         <div className="border-t border-[var(--border)]" />
 
         {/* Row 2: Nav links — evenly spread, no scroll */}
-        <nav className="flex items-center justify-around px-2 py-[9px]">
+        <nav aria-label="Mobile primary" className="flex items-center justify-around px-2 py-[9px]">
           {navLinks.map(({ label, href }) => {
             const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
             return (

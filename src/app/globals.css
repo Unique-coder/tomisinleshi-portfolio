@@ -34,3 +34,10 @@ body {
   font-size: 16px;
   line-height: 1.8;
 }
+
+/* Visible focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

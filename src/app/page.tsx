@@ -3,6 +3,22 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Tomisin Leshi',
+  description: 'Co-Founder & CTO at LINK. Building cross-border payment rails across African markets. Pattern thinker. Self-taught.',
+  alternates: { canonical: 'https://www.tomisinleshi.dev' },
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Tomisin Leshi',
+  jobTitle: 'Co-Founder & CTO',
+  url: 'https://www.tomisinleshi.dev',
+  sameAs: [
+    'https://twitter.com/tomlesh',
+    'https://linkedin.com/in/tomisin-leshi',
+    'https://github.com/tomisinleshi',
+    'https://substack.com/@tomlesh',
+  ],
 };
 
 const socialLinks = [
@@ -17,6 +33,10 @@ const labelClass = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9C
 export default function AboutPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* Name */}
       <h1 className="font-serif text-[2rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1 leading-tight">
         Tomisin Leshi

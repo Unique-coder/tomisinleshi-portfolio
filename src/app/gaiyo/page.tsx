@@ -3,6 +3,8 @@ import Collapsible from '@/components/Collapsible';
 
 export const metadata: Metadata = {
   title: 'Story — Tomisin Leshi',
+  description: 'The story of Tomisin Leshi — self-taught engineer, Co-Founder of LINK, building financial infrastructure across African markets.',
+  alternates: { canonical: 'https://www.tomisinleshi.dev/gaiyo' },
 };
 
 const accomplishments = [

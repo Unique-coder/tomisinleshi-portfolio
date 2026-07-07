@@ -6,6 +6,8 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Bookshelf \u2014 Tomisin Leshi',
+  description: 'Books Tomisin Leshi has read and intends to read \u2014 across mindset, fiction, and finance.',
+  alternates: { canonical: 'https://www.tomisinleshi.dev/bookshelf' },
 };
 
 async function getBooks(): Promise<Book[]> {

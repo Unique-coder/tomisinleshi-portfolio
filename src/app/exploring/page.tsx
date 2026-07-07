@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Exploring — Tomisin Leshi',
+  description: 'What Tomisin Leshi is thinking about — financial infrastructure, stablecoin corridors, and kingdom financing.',
+  alternates: { canonical: 'https://www.tomisinleshi.dev/exploring' },
 };
 
 const attentionItems = [

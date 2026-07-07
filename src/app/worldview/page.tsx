@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Worldview — Tomisin Leshi',
+  description: "Tomisin Leshi's operating principles — how he thinks about building, distribution, infrastructure, and systems.",
+  alternates: { canonical: 'https://www.tomisinleshi.dev/worldview' },
 };
 
 const principles = [
