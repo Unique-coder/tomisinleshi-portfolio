@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_URL } from '../../lib/site';
+import { LagosTime } from '@/components/LagosTime';
+import { CopyEmailButton } from '@/components/CopyEmailButton';
+import { hero } from '../../content/home';
 
 export const metadata: Metadata = {
   title: 'Tomisin Leshi: Payment infrastructure for African markets',
@@ -47,39 +51,64 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      {/* Name */}
-      <h1 className="font-serif text-[2rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1 leading-tight">
-        Tomisin Leshi
-      </h1>
 
-      {/* Pronunciation */}
-      <p className="text-[13px] text-[#9CA3AF] mb-1 italic">
-        /toh&middot;mi&middot;sin leh&middot;shi/
-      </p>
+      {/* Hero */}
+      <div className="flex flex-col md:flex-row-reverse md:items-start gap-6 mb-10">
+        <Image
+          src={hero.photo}
+          alt="Tomisin Leshi"
+          width={220}
+          height={220}
+          priority
+          sizes="(max-width: 767px) 96px, 220px"
+          className="w-24 h-24 md:w-[220px] md:h-[220px] rounded-xl object-cover shrink-0"
+        />
 
-      {/* Part of speech */}
-      <p className="text-[13px] text-[#9CA3AF] italic mb-6">noun</p>
+        <div className="flex-1 min-w-0">
+          <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
+            LAGOS &middot; <LagosTime /> &middot; PAYMENTS &amp; BACKEND ENGINEER
+          </p>
 
-      {/* Definitions */}
-      <div className="flex flex-col gap-4 mb-10 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
-        <p>
-          <span className="mr-2">1.</span>
-          Pattern thinker. I find the structure underneath the problem. In systems,
-          markets, and conversations, I find the move that changes everything.
-        </p>
-        <p>
-          <span className="mr-2">2.</span>
-          Co-Founder and CTO at LINK. Building cross-border payment rails across
-          African markets. Self-taught. Still figuring things out.
-        </p>
-        <p>
-          <span className="mr-2">3.</span>
-          Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
-        </p>
-        <p className="text-[15px] text-[#9CA3AF] leading-[1.8]">
-          Three-time Stellar Community Fund awardee &middot; $277K+ raised &middot; First Place, Base Batch Europe &middot; Building payment rails across NGN, GHS, KES, ZAR corridors.
-        </p>
+          <h1 className="text-[clamp(1.75rem,5vw,2.5rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-tight mb-4">
+            {hero.h1}
+          </h1>
+
+          <p className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.8] mb-6 max-w-[52ch]">
+            {hero.sub}
+          </p>
+
+          <div className="inline-flex items-center gap-2 border border-[var(--border)] rounded-full px-3 py-1.5 text-[13px] text-[var(--muted)] mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
+            {hero.availability}
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-3 mb-4">
+            <a
+              href={hero.calUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+            >
+              Book a call
+            </a>
+            <CopyEmailButton email={hero.email} />
+          </div>
+
+          <Link
+            href={hero.cvPath}
+            className="text-[14px] text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+          >
+            Download CV &rarr;
+          </Link>
+        </div>
       </div>
+
+      {/* Factual record */}
+      <p className="text-[15px] text-[#9CA3AF] leading-[1.8] mb-10">
+        Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
+        Three-time Stellar Community Fund awardee &middot; $277K+ raised &middot;
+        First Place, Base Batch Europe &middot; Building payment rails across NGN, GHS, KES, ZAR corridors.
+      </p>
 
       {/* SEE ALSO */}
       <div className="border-t border-[var(--border)] pt-5 mb-6">
@@ -105,26 +134,13 @@ export default function AboutPage() {
       <div className="border-t border-[var(--border)] pt-5 mb-6">
         <span className={labelClass}>Let&apos;s talk</span>
         <a
-          href="https://cal.com/tomisin-leshi"
+          href={hero.calUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
         >
           cal.com/tomisin-leshi
         </a>
-      </div>
-
-      {/* CURRENTLY */}
-      <div className="border-t border-[var(--border)] pt-5 mb-6">
-        <span className={labelClass}>Currently</span>
-        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
-          <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
-          <p>
-            Thinking about kingdom financing. What it means to build infrastructure
-            with purpose, not just returns. Paying close attention to where trust
-            moves in systems before contracts do.
-          </p>
-        </div>
       </div>
 
       {/* Directional footer note */}

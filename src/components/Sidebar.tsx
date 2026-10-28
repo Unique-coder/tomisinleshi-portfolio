@@ -159,6 +159,7 @@ export default function Sidebar() {
         <p className="text-[10px] tracking-wide text-[#9CA3AF] whitespace-nowrap">
           &copy; TOMISIN LESHI &middot; {new Date().getFullYear()}
         </p>
+        <p className="text-[10px] text-[#9CA3AF] italic mt-1">/toh&middot;mi&middot;sin leh&middot;shi/</p>
       </aside>
 
       {/* ── Mobile sticky top bar (<768px) ─────────── */}
@@ -264,6 +265,7 @@ export default function Sidebar() {
                 </a>
               ))}
             </div>
+            <p className="text-[11px] text-[#9CA3AF] italic pb-6">/toh&middot;mi&middot;sin leh&middot;shi/</p>
           </div>
         </div>
       )}
