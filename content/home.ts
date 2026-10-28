@@ -1,11 +1,16 @@
-// TODO: replace photo with /images/tomisin.jpg once added to public/images/
-// TODO: replace email with real address before going live
 export const hero = {
   h1: 'I build the systems that move money across African borders.',
   sub: 'Co-founder and engineering lead at LINK, where we run payment corridors across Nigeria, Ghana, Kenya and South Africa. I design the rails, write the code and ship it.',
   availability: 'Available for: payment infrastructure builds, technical advisory, remote backend roles',
-  email: 'TODO_FILL_EMAIL',
+  email: 'tomisinleshi.dev@gmail.com',
   calUrl: 'https://cal.com/tomisin-leshi',
   cvPath: '/cv',
-  photo: '/assets/profile.jpeg',
+  photo: '/assets/tomisin.jpg',
 } as const;
+
+export const proof = [
+  { value: '$270K+', label: 'in Stellar Community Fund grants (3 awards)' },
+  { value: '4',      label: 'live payment corridors: NGN, GHS, KES, ZAR' },
+  { value: '1st',    label: 'Base Batch hackathon Europe' },
+  { value: '5 yrs',  label: 'building payments at LINK' },
+] as const;

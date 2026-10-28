@@ -4,7 +4,9 @@ import Image from 'next/image';
 import { SITE_URL } from '../../lib/site';
 import { LagosTime } from '@/components/LagosTime';
 import { CopyEmailButton } from '@/components/CopyEmailButton';
-import { hero } from '../../content/home';
+import { Section } from '@/components/Section';
+import { hero, proof } from '../../content/home';
+import { services } from '../../content/services';
 
 export const metadata: Metadata = {
   title: 'Tomisin Leshi: Payment infrastructure for African markets',
@@ -36,8 +38,8 @@ const personSchema = {
 };
 
 const socialLinks = [
-  { label: 'Twitter', href: 'https://twitter.com/tomlesh' },
-  { label: 'GitHub', href: 'https://github.com/tomisinleshi' },
+  { label: 'Twitter',  href: 'https://twitter.com/tomlesh' },
+  { label: 'GitHub',   href: 'https://github.com/tomisinleshi' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/tomisin-leshi' },
   { label: 'Substack', href: 'https://substack.com/@tomlesh' },
 ];
@@ -52,16 +54,16 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      {/* Hero */}
+      {/* ── Hero ─────────────────────────────────────── */}
       <div className="flex flex-col md:flex-row-reverse md:items-start gap-6 mb-10">
         <Image
           src={hero.photo}
           alt="Tomisin Leshi"
-          width={220}
-          height={220}
+          width={160}
+          height={160}
           priority
-          sizes="(max-width: 767px) 96px, 220px"
-          className="w-24 h-24 md:w-[220px] md:h-[220px] rounded-xl object-cover shrink-0"
+          sizes="(max-width: 767px) 96px, 160px"
+          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover shrink-0"
         />
 
         <div className="flex-1 min-w-0">
@@ -103,14 +105,64 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Factual record */}
+      {/* ── Proof strip ──────────────────────────────── */}
+      <div className="border-y border-[var(--border)] py-6 mb-16 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
+        {proof.map(({ value, label }) => (
+          <div key={value} className="flex flex-col gap-1">
+            <span className="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-none tabular-nums">
+              {value}
+            </span>
+            <span className="text-[12px] text-[var(--muted)] leading-snug">{label}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Services ─────────────────────────────────── */}
+      <Section id="services" kicker="01 · WHAT I DO" title="Where I can help" className="mb-16">
+        <div className="flex flex-col lg:flex-row">
+          {services.map(({ title, for: forLine, bullets, calParam }, i) => (
+            <div
+              key={title}
+              className={[
+                'flex-1 py-8 first:pt-0 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0',
+                i > 0 ? 'border-t lg:border-t-0 lg:border-l border-[var(--border)]' : '',
+              ].join(' ')}
+            >
+              <h3 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-2">
+                {title}
+              </h3>
+              <p className="text-[13px] text-[var(--muted)] mb-4 leading-snug">
+                For: {forLine}
+              </p>
+              <ul className="flex flex-col gap-2 mb-6 list-none p-0">
+                {bullets.map((b) => (
+                  <li key={b} className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-snug flex gap-2">
+                    <span className="text-[var(--muted)] shrink-0 mt-0.5">&#8212;</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={`${hero.calUrl}?service=${calParam}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[14px] font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"
+              >
+                Talk about this &rarr;
+              </a>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── Factual record ───────────────────────────── */}
       <p className="text-[15px] text-[#9CA3AF] leading-[1.8] mb-10">
         Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
-        Three-time Stellar Community Fund awardee &middot; $277K+ raised &middot;
-        First Place, Base Batch Europe &middot; Building payment rails across NGN, GHS, KES, ZAR corridors.
+        $270K+ raised across three Stellar Community Fund awards &middot;
+        First Place, Base Batch Europe.
       </p>
 
-      {/* SEE ALSO */}
+      {/* ── See also ─────────────────────────────────── */}
       <div className="border-t border-[var(--border)] pt-5 mb-6">
         <span className={labelClass}>See also</span>
         <div className="flex items-center gap-3 flex-wrap">
@@ -130,7 +182,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* LET'S TALK */}
+      {/* ── Let's talk ───────────────────────────────── */}
       <div className="border-t border-[var(--border)] pt-5 mb-6">
         <span className={labelClass}>Let&apos;s talk</span>
         <a
@@ -143,7 +195,7 @@ export default function AboutPage() {
         </a>
       </div>
 
-      {/* Directional footer note */}
+      {/* ── Directional footer note ──────────────────── */}
       <p className="text-[15px] text-[#9CA3AF] leading-[1.8]">
         I write about building, distribution, and African infrastructure. Essays on{' '}
         <a
