@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
 import BookshelfClient from '@/components/BookshelfClient';
 import type { Book } from '../../../lib/schema';
 
@@ -7,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Bookshelf \u2014 Tomisin Leshi',
   description: 'Books Tomisin Leshi has read and intends to read \u2014 across mindset, fiction, and finance.',
-  alternates: { canonical: 'https://www.tomisinleshi.dev/bookshelf' },
+  alternates: { canonical: `${SITE_URL}/bookshelf` },
 };
 
 async function getBooks(): Promise<Book[]> {

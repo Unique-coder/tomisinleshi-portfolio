@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
 
 export const metadata: Metadata = {
   title: 'Writing — Tomisin Leshi',
   description: "Essays and notes on building, distribution, and African infrastructure. Tomisin Leshi's Founder's Journey series on Substack.",
-  alternates: { canonical: 'https://www.tomisinleshi.dev/writing' },
+  alternates: { canonical: `${SITE_URL}/writing` },
 };
 
 const longForm = [

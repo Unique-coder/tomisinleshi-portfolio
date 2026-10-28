@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '../../lib/site';
 
 export const metadata: Metadata = {
-  title: 'Tomisin Leshi',
-  description: 'Co-Founder & CTO at LINK. Building cross-border payment rails across African markets. Pattern thinker. Self-taught.',
-  alternates: { canonical: 'https://www.tomisinleshi.dev' },
+  title: 'Tomisin Leshi: Payment infrastructure for African markets',
+  description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: 'Tomisin Leshi: Payment infrastructure for African markets',
+    description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+    url: SITE_URL,
+  },
+  twitter: {
+    title: 'Tomisin Leshi: Payment infrastructure for African markets',
+    description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+  },
 };
 
 const personSchema = {
@@ -12,7 +22,7 @@ const personSchema = {
   '@type': 'Person',
   name: 'Tomisin Leshi',
   jobTitle: 'Co-Founder & CTO',
-  url: 'https://www.tomisinleshi.dev',
+  url: SITE_URL,
   sameAs: [
     'https://twitter.com/tomlesh',
     'https://linkedin.com/in/tomisin-leshi',

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
 
 export const metadata: Metadata = {
   title: 'Worldview — Tomisin Leshi',
   description: "Tomisin Leshi's operating principles — how he thinks about building, distribution, infrastructure, and systems.",
-  alternates: { canonical: 'https://www.tomisinleshi.dev/worldview' },
+  alternates: { canonical: `${SITE_URL}/worldview` },
 };
 
 const principles = [
