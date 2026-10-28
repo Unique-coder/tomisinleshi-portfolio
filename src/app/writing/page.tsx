@@ -1,137 +1,125 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
+import { posts as linkedInPosts } from '../../../content/posts';
+import { WritingTabs, type UnifiedPost } from '@/components/WritingTabs';
 
 export const metadata: Metadata = {
   title: 'Writing — Tomisin Leshi',
-  description: "Essays and notes on building, distribution, and African infrastructure. Tomisin Leshi's Founder's Journey series on Substack.",
-  alternates: { canonical: 'https://www.tomisinleshi.dev/writing' },
+  description:
+    "Essays and notes on building payments, distribution, and African infrastructure. Published on Substack, LinkedIn and X.",
+  alternates: { canonical: `${SITE_URL}/writing` },
 };
 
-const longForm = [
+// Static Substack posts shown as fallback and always included
+const staticSubstack: UnifiedPost[] = [
   {
     title: "You're Building What You Want to Sell. Not What They Want to Buy.",
     date: '22 Mar 2026',
     description:
-      'Why the reason customers buy is never the reason founders build — and what to do about it.',
+      'Why the reason customers buy is never the reason founders build, and what to do about it.',
     href: 'https://substack.com/@tomlesh/note/c-231661418',
-    source: 'Substack',
+    platform: 'substack',
   },
   {
     title: 'Understanding the Fear of Building.',
     date: '22 Mar 2026',
     description:
-      'The structural reasons founders freeze — and why it is not a psychology problem.',
+      'The structural reasons founders freeze, and why it is not a psychology problem.',
     href: 'https://substack.com/@tomlesh/note/c-230752077',
-    source: 'Substack',
+    platform: 'substack',
   },
   {
     title: "Founder's Journey Part 2: The First Mover Disadvantage.",
     date: '09 Jan 2026',
     description: 'Why being first is not the advantage most founders think it is.',
     href: 'https://substack.com/@tomlesh/note/p-183835467',
-    source: 'Substack',
+    platform: 'substack',
   },
   {
     title: "Founder's Journey",
     date: '15 Dec 2025',
     description:
-      'The opening piece. Why I started writing about building — and what I am trying to figure out.',
+      'The opening piece. Why I started writing about building, and what I am trying to figure out.',
     href: 'https://substack.com/@tomlesh/note/p-180068781',
-    source: 'Substack',
+    platform: 'substack',
   },
 ];
 
-const shorterPieces = [
+const xPosts: UnifiedPost[] = [
   {
     title: 'Building Fast in the AI Space.',
     date: 'Pinned',
     description: 'A quick breakdown of what speed actually means when building with AI.',
-    href: 'https://substack.com/@tomlesh',
-    source: 'X',
+    href: 'https://twitter.com/TommLesh',
+    platform: 'x',
   },
 ];
 
-const sectionLabel = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF] mb-4 block';
-
-function ArticleRow({
-  title,
-  date,
-  description,
-  href,
-  source,
-  borderTop = true,
-}: {
-  title: string;
-  date: string;
-  description: string;
-  href: string;
-  source: string;
-  borderTop?: boolean;
-}) {
-  return (
-    <div className={`py-5 ${borderTop ? 'border-t border-[var(--border)]' : ''}`}>
-      <div className="flex items-start justify-between gap-4 mb-1">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline leading-snug"
-        >
-          {title} &#x2197;
-        </a>
-        <span className="text-[13px] text-[#9CA3AF] whitespace-nowrap mt-[3px] flex-shrink-0">
-          {date}
-        </span>
-      </div>
-      <p className="text-[14px] text-[#9CA3AF] leading-[1.6] mb-1">{description}</p>
-      <span className="text-[11px] tracking-[0.08em] uppercase text-[#9CA3AF]">{source}</span>
-    </div>
-  );
+async function fetchSubstackPosts(): Promise<UnifiedPost[]> {
+  try {
+    const res = await fetch('https://tomlesh.substack.com/feed', {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return staticSubstack;
+    const xml = await res.text();
+    const items = xml.match(/<item>([\s\S]*?)<\/item>/g)?.slice(0, 6) ?? [];
+    if (!items.length) return staticSubstack;
+    const rssItems = items.map((item): UnifiedPost => {
+      const title = (
+        item.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/)?.[1] ??
+        item.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? ''
+      ).trim();
+      const href =
+        item.match(/<link>(https?:\/\/[^\s<]+)<\/link>/)?.[1] ??
+        'https://tomlesh.substack.com';
+      const rawDate = item.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1] ?? '';
+      const date = rawDate
+        ? new Date(rawDate).toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric',
+          })
+        : '';
+      const rawDesc = (
+        item.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/)?.[1] ?? ''
+      ).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      const description =
+        rawDesc.length > 140 ? rawDesc.slice(0, 140).trimEnd() + '…' : rawDesc;
+      return { title, date, description, href, platform: 'substack' };
+    });
+    // Merge: prefer RSS, fill any not-yet-in-RSS from static (by URL)
+    const rssUrls = new Set(rssItems.map((p) => p.href));
+    const extra = staticSubstack.filter((p) => !rssUrls.has(p.href));
+    return [...rssItems, ...extra];
+  } catch {
+    return staticSubstack;
+  }
 }
 
-export default function WritingPage() {
+export default async function WritingPage() {
+  const substackPosts = await fetchSubstackPosts();
+
+  const allPosts: UnifiedPost[] = [
+    ...substackPosts,
+    ...linkedInPosts.map((p) => ({
+      title: p.title,
+      date: '',
+      description: p.hook,
+      href: p.url,
+      platform: 'linkedin' as const,
+      impressions: p.impressions,
+    })),
+    ...xPosts,
+  ];
+
   return (
     <div>
-      {/* Header */}
-      <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
+      <h1 className="text-[1.75rem] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-2">
         Writing
       </h1>
-      <p className="text-[15px] text-[#9CA3AF] mb-2">
-        Longer thoughts, published on X and Substack.
+      <p className="text-[15px] text-[var(--muted)] mb-8 max-w-[56ch]">
+        Longer thoughts on building payments, distribution, and infrastructure in Africa.
       </p>
 
-      {/* Subscribe prompt */}
-      <p className="text-[15px] text-[#9CA3AF] mb-10">
-        I publish a series called Founder&apos;s Journey on Substack.{' '}
-        Subscribe &rarr;{' '}
-        <a
-          href="https://substack.com/@tomlesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-        >
-          substack.com/@tomlesh
-        </a>
-      </p>
-
-      {/* Section 1: Long Form */}
-      <div className="mb-10">
-        <span className={sectionLabel}>Founder&apos;s Journey — Long Form</span>
-        <div className="border-b border-[var(--border)]">
-          {longForm.map((post, i) => (
-            <ArticleRow key={post.href} {...post} borderTop={i === 0} />
-          ))}
-        </div>
-      </div>
-
-      {/* Section 2: Shorter Pieces */}
-      <div>
-        <span className={sectionLabel}>Notes and Shorter Pieces</span>
-        <div className="border-b border-[var(--border)]">
-          {shorterPieces.map((post, i) => (
-            <ArticleRow key={post.href} {...post} borderTop={i === 0} />
-          ))}
-        </div>
-      </div>
+      <WritingTabs posts={allPosts} />
     </div>
   );
 }

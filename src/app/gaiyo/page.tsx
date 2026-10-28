@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
 import Collapsible from '@/components/Collapsible';
 
 export const metadata: Metadata = {
   title: 'Story — Tomisin Leshi',
   description: 'The story of Tomisin Leshi — self-taught engineer, Co-Founder of LINK, building financial infrastructure across African markets.',
-  alternates: { canonical: 'https://www.tomisinleshi.dev/gaiyo' },
+  alternates: { canonical: `${SITE_URL}/gaiyo` },
 };
 
 const accomplishments = [

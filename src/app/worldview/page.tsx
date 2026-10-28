@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site';
 
 export const metadata: Metadata = {
   title: 'Worldview — Tomisin Leshi',
   description: "Tomisin Leshi's operating principles — how he thinks about building, distribution, infrastructure, and systems.",
-  alternates: { canonical: 'https://www.tomisinleshi.dev/worldview' },
+  alternates: { canonical: `${SITE_URL}/worldview` },
 };
 
 const principles = [
@@ -47,6 +48,19 @@ export default function WorldviewPage() {
       <p className="text-[15px] text-[#9CA3AF] mb-10">
         Operating principles. How I see the game.
       </p>
+
+      {/* Currently — moved from homepage */}
+      <div className="mb-10 pb-8 border-b border-[var(--border)]">
+        <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[#9CA3AF] mb-3">Currently</p>
+        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+          <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
+          <p>
+            Thinking about kingdom financing. What it means to build infrastructure
+            with purpose, not just returns. Paying close attention to where trust
+            moves in systems before contracts do.
+          </p>
+        </div>
+      </div>
 
       {/* Principles */}
       <div>
