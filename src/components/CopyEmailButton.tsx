@@ -22,7 +22,7 @@ export function CopyEmailButton({ email }: Props) {
     <>
       <button
         onClick={handleClick}
-        className="flex items-center justify-center min-h-[44px] px-6 border border-[var(--border)] text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors rounded-sm"
+        className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 border border-[var(--border)] text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors rounded-sm"
       >
         {copied ? 'Copied!' : 'Copy email'}
       </button>

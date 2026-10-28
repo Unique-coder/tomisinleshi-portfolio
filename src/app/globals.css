@@ -9,7 +9,7 @@
   --text:         #343D4D;
   --muted:        #9CA3AF;
   --border:       #E5E7EB;
-  --accent:       #2E5D4B;   /* deep green — 6.69:1 on white, AA ✓ */
+  --accent:       #1E4D80;   /* muted navy — 8.71:1 on white, AA ✓ */
 
   /* backward-compat aliases used throughout existing pages */
   --text-primary: var(--text);
@@ -22,7 +22,7 @@
   --text:         #F5F0E8;
   --muted:        #9CA3AF;
   --border:       #4A5568;
-  --accent:       #6EE7B7;   /* light emerald — 6.28:1 on dark bg, AA ✓ */
+  --accent:       #93C5FD;   /* sky blue — 5.88:1 on dark bg, AA ✓ */
 
   --text-primary: var(--text);
   --text-muted:   var(--muted);

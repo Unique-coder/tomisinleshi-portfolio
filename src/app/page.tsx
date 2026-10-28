@@ -5,6 +5,9 @@ import { SITE_URL } from '../../lib/site';
 import { LagosTime } from '@/components/LagosTime';
 import { CopyEmailButton } from '@/components/CopyEmailButton';
 import { Section } from '@/components/Section';
+import { WorkSection } from '@/components/WorkSection';
+import { StackSection } from '@/components/StackSection';
+import { ExperienceSection } from '@/components/ExperienceSection';
 import { hero, proof } from '../../content/home';
 import { services } from '../../content/services';
 
@@ -63,7 +66,7 @@ export default function AboutPage() {
           height={160}
           priority
           sizes="(max-width: 767px) 96px, 160px"
-          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover shrink-0"
+          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover shrink-0 md:mt-8"
         />
 
         <div className="flex-1 min-w-0">
@@ -79,9 +82,9 @@ export default function AboutPage() {
             {hero.sub}
           </p>
 
-          <div className="inline-flex items-center gap-2 border border-[var(--border)] rounded-full px-3 py-1.5 text-[13px] text-[var(--muted)] mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
-            {hero.availability}
+          <div className="flex items-start gap-2 text-[13px] text-[var(--muted)] mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 mt-[5px]" aria-hidden="true" />
+            <span>{hero.availability}</span>
           </div>
 
           <div className="flex flex-col md:flex-row gap-3 mb-4">
@@ -89,7 +92,7 @@ export default function AboutPage() {
               href={hero.calUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+              className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
             >
               Book a call
             </a>
@@ -117,6 +120,9 @@ export default function AboutPage() {
         ))}
       </div>
 
+      {/* ── Selected work ────────────────────────────── */}
+      <WorkSection />
+
       {/* ── Services ─────────────────────────────────── */}
       <Section id="services" kicker="01 · WHAT I DO" title="Where I can help" className="mb-16">
         <div className="flex flex-col lg:flex-row">
@@ -124,10 +130,13 @@ export default function AboutPage() {
             <div
               key={title}
               className={[
-                'flex-1 py-8 first:pt-0 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0',
+                'flex-1 py-8 first:pt-0 lg:py-0 lg:px-6 first:lg:pl-0 last:lg:pr-0 rounded transition-colors hover:bg-[var(--surface)]',
                 i > 0 ? 'border-t lg:border-t-0 lg:border-l border-[var(--border)]' : '',
               ].join(' ')}
             >
+              <span className="text-[11px] tracking-[0.12em] font-medium text-[var(--muted)] mb-3 block">
+                {String(i + 1).padStart(2, '0')}
+              </span>
               <h3 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-2">
                 {title}
               </h3>
@@ -137,7 +146,7 @@ export default function AboutPage() {
               <ul className="flex flex-col gap-2 mb-6 list-none p-0">
                 {bullets.map((b) => (
                   <li key={b} className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-snug flex gap-2">
-                    <span className="text-[var(--muted)] shrink-0 mt-0.5">&#8212;</span>
+                    <span className="text-[var(--muted)] shrink-0 mt-0.5">→</span>
                     {b}
                   </li>
                 ))}
@@ -155,8 +164,14 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* ── Stack ────────────────────────────────────── */}
+      <StackSection />
+
+      {/* ── Experience ───────────────────────────────── */}
+      <ExperienceSection />
+
       {/* ── Factual record ───────────────────────────── */}
-      <p className="text-[15px] text-[#9CA3AF] leading-[1.8] mb-10">
+      <p className="text-[15px] text-[#6B7280] font-medium leading-[1.8] mb-10">
         Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
         $270K+ raised across three Stellar Community Fund awards &middot;
         First Place, Base Batch Europe.
