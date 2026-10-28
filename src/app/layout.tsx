@@ -53,8 +53,8 @@ export default function RootLayout({
           Skip to content
         </a>
         <Sidebar />
-        <main id="main-content" className="md:ml-[200px] pt-[80px] md:pt-0">
-          <div className="max-w-[680px] mx-auto px-8 py-12 animate-fade-in">
+        <main id="main-content" className="md:ml-[200px] pt-14 md:pt-0">
+          <div className="max-w-[720px] mx-auto px-4 md:px-8 py-12 animate-fade-in">
             {children}
           </div>
         </main>

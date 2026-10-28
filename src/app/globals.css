@@ -2,20 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens ─────────────────────────────────── */
 :root {
-  --bg: #FFFFFF;
-  --text-primary: #343D4D;
-  --text-muted: #9CA3AF;
-  --border: #E5E7EB;
+  --bg:           #FFFFFF;
+  --surface:      #F9FAFB;   /* slightly elevated panels */
+  --text:         #343D4D;
+  --muted:        #9CA3AF;
+  --border:       #E5E7EB;
+  --accent:       #2E5D4B;   /* deep green — 6.69:1 on white, AA ✓ */
+
+  /* backward-compat aliases used throughout existing pages */
+  --text-primary: var(--text);
+  --text-muted:   var(--muted);
 }
 
 .dark {
-  --bg: #343D4D;
-  --text-primary: #F5F0E8;
-  --text-muted: #9CA3AF;
-  --border: #4A5568;
+  --bg:           #343D4D;
+  --surface:      #3D4A5C;
+  --text:         #F5F0E8;
+  --muted:        #9CA3AF;
+  --border:       #4A5568;
+  --accent:       #6EE7B7;   /* light emerald — 6.28:1 on dark bg, AA ✓ */
+
+  --text-primary: var(--text);
+  --text-muted:   var(--muted);
 }
 
+/* ── Base typography ────────────────────────────────── */
 * {
   font-family: 'Tahoma', 'Geneva', sans-serif;
 }
@@ -26,18 +39,35 @@ html {
 
 html, body {
   background-color: var(--bg);
-  color: var(--text-primary);
+  color: var(--text);
   transition: background-color 0.2s, color 0.2s;
 }
 
 body {
-  font-size: 16px;
+  font-size: clamp(1rem, 1.5vw, 1.0625rem); /* 16–17px */
   line-height: 1.8;
 }
 
-/* Visible focus styles for keyboard navigation */
+/* fluid h1 — only kicks in where no explicit Tailwind text-[...] class is set */
+h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+/* ── Scroll behaviour ───────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ── Accessibility ──────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--text-primary);
+  outline: 2px solid var(--text);
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* ── Utilities ──────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.2s ease forwards; }
