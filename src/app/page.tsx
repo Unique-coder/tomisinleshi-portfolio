@@ -10,6 +10,7 @@ import { StackSection } from '@/components/StackSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { ContactSection } from '@/components/ContactSection';
 import { StickyCallBar } from '@/components/StickyCallBar';
+import { QuestionChips } from '@/components/QuestionChips';
 import { hero, proof } from '../../content/home';
 import { services } from '../../content/services';
 
@@ -112,6 +113,9 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
+
+      {/* ── Question chips ───────────────────────────── */}
+      <QuestionChips />
 
       {/* ── Selected work ────────────────────────────── */}
       <WorkSection />

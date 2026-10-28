@@ -17,7 +17,7 @@ export const work: readonly WorkItem[] = [
   {
     slug: 'link-routing-api',
     name: 'LINK routing layer and public API',
-    role: 'Co-founder and CTO, LINK',
+    role: 'Co-founder and CTO, LINK GLOBAL',
     years: '2023 to now',
     status: 'live',
     featured: true,
@@ -37,7 +37,7 @@ export const work: readonly WorkItem[] = [
   {
     slug: 'stellar-sep24-anchor',
     name: 'Stellar SEP-24 anchor',
-    role: 'Engineering, LINK',
+    role: 'Engineering, LINK GLOBAL',
     status: 'live',
     featured: true,
     problem:
@@ -51,7 +51,7 @@ export const work: readonly WorkItem[] = [
   {
     slug: 'naira-stablecoin',
     name: 'Naira-backed stablecoin',
-    role: 'Engineering, LINK',
+    role: 'Engineering, LINK GLOBAL',
     status: 'live',
     featured: true,
     problem: 'Moving naira on-chain meant converting to dollars first.',
@@ -59,14 +59,12 @@ export const work: readonly WorkItem[] = [
       'A naira-backed stablecoin issued across five networks: Stellar, Ethereum, Polygon, Arbitrum and Base.',
     ],
     result: '$2M+ in on-chain volume.',
-    // [CONFIRM: Solidity/EVM before publishing]
-    stack: ['Stellar', 'Solidity/EVM', 'Node.js'],
+    stack: ['Stellar', 'Polugon', 'Solidity/EVM', 'Node.js'],
   },
   {
     slug: 'bridgecore',
     name: 'BridgeCore',
-    role: 'Lead, LINK',
-    // [CONFIRM: status — in progress or live?]
+    role: 'Lead, LINK GLOBAL',
     status: 'in progress',
     featured: false,
     built: [
@@ -77,14 +75,13 @@ export const work: readonly WorkItem[] = [
   {
     slug: 'checkout-by-link',
     name: 'Checkout by LINK',
-    role: 'Engineering, LINK',
+    role: 'Engineering, LINK GLOBAL',
     status: 'live',
     featured: false,
     built: [
       'On-chain merchant checkout so businesses can take payment in stablecoins instead of fiat, on Base and Solana.',
     ],
-    // [CONFIRM: hackathon name]
-    result: '1st place, [CONFIRM: hackathon name].',
+    result: '1st place, Base Batch hackathon Europe.',
     stack: ['TypeScript', 'Base', 'Solana'],
     link: 'https://devfolio.co/projects/checkout-by-link-f763',
   },

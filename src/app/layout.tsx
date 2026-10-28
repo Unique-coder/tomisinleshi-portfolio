@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Tomisin Leshi",
-  description: "Co-Founder & CTO at LINK. Building cross-border payment rails across African markets. Pattern thinker. Self-taught.",
+  description: "Co-Founder & CTO at LINK. Building cross-border payment rails across African markets.",
   keywords: "Tomisin Leshi, LINK, Co-Founder, CTO, Cross-Border Payments, Africa, Fintech, Full-Stack Engineer, Web3",
   authors: [{ name: "Tomisin Leshi" }],
   openGraph: {
