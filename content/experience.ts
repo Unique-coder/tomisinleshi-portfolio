@@ -10,12 +10,6 @@ export type Company = {
   years: string;
 };
 
-export type Education = {
-  school: string;
-  degree: string;
-  years: string;
-};
-
 // LINK progression — 4 roles, earliest first
 export const linkRoles: readonly LINKRole[] = [
   {
@@ -34,7 +28,7 @@ export const linkRoles: readonly LINKRole[] = [
     ],
   },
   {
-    title: 'Lead Engineer',
+    title: 'Technical Lead Engineer',
     years: '2022 to 2023',
     bullets: [
       'Built the Stellar SEP-24 anchor and naira stablecoin across five networks.',
@@ -52,11 +46,7 @@ export const linkRoles: readonly LINKRole[] = [
 ] as const;
 
 export const otherCompanies: readonly Company[] = [
-  { name: 'Strich Inc',      role: 'Software Engineer',   years: '[TODO: year]' },
-  { name: 'himylink AI',     role: 'Software Engineer',   years: '[TODO: year]' },
-  { name: 'Cyprus Robotics', role: 'Software Engineer',   years: '[TODO: year]' },
-] as const;
-
-export const education: readonly Education[] = [
-  { school: '[TODO: University]', degree: '[TODO: Degree]', years: '[TODO: Years]' },
+  { name: 'Strich Inc',      role: 'Backend Engineer',         years: 'Feb 2022 – Jul 2022' },
+  { name: 'himylink AI',     role: 'Full Stack Engineer',      years: 'Aug 2021 – Dec 2021' },
+  { name: 'Cyprus Robotics', role: 'Junior Software Engineer', years: 'Nov 2020 – Apr 2021' },
 ] as const;

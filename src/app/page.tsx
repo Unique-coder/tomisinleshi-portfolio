@@ -8,6 +8,8 @@ import { Section } from '@/components/Section';
 import { WorkSection } from '@/components/WorkSection';
 import { StackSection } from '@/components/StackSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
+import { ContactSection } from '@/components/ContactSection';
+import { StickyCallBar } from '@/components/StickyCallBar';
 import { hero, proof } from '../../content/home';
 import { services } from '../../content/services';
 
@@ -40,15 +42,6 @@ const personSchema = {
   ],
 };
 
-const socialLinks = [
-  { label: 'Twitter',  href: 'https://twitter.com/tomlesh' },
-  { label: 'GitHub',   href: 'https://github.com/tomisinleshi' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/tomisin-leshi' },
-  { label: 'Substack', href: 'https://substack.com/@tomlesh' },
-];
-
-const labelClass = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF] mb-2 block';
-
 export default function AboutPage() {
   return (
     <div>
@@ -66,7 +59,7 @@ export default function AboutPage() {
           height={160}
           priority
           sizes="(max-width: 767px) 96px, 160px"
-          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover shrink-0 md:mt-8"
+          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover object-top shrink-0 md:mt-8"
         />
 
         <div className="flex-1 min-w-0">
@@ -87,7 +80,7 @@ export default function AboutPage() {
             <span>{hero.availability}</span>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-3 mb-4">
+          <div id="hero-cta" className="flex flex-col md:flex-row gap-3 mb-4">
             <a
               href={hero.calUrl}
               target="_blank"
@@ -170,74 +163,10 @@ export default function AboutPage() {
       {/* ── Experience ───────────────────────────────── */}
       <ExperienceSection />
 
-      {/* ── Factual record ───────────────────────────── */}
-      <p className="text-[15px] text-[#6B7280] font-medium leading-[1.8] mb-10">
-        Previously at: Strich Inc &middot; Himylink &middot; Cyprus Robotics.
-        $270K+ raised across three Stellar Community Fund awards &middot;
-        First Place, Base Batch Europe.
-      </p>
+      {/* ── Contact ──────────────────────────────────── */}
+      <ContactSection />
 
-      {/* ── See also ─────────────────────────────────── */}
-      <div className="border-t border-[var(--border)] pt-5 mb-6">
-        <span className={labelClass}>See also</span>
-        <div className="flex items-center gap-3 flex-wrap">
-          {socialLinks.map(({ label, href }, i) => (
-            <span key={label} className="flex items-center gap-3">
-              {i > 0 && <span className="text-[#D1D5DB] dark:text-[#4A5568] select-none">|</span>}
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-              >
-                {label}
-              </a>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Let's talk ───────────────────────────────── */}
-      <div className="border-t border-[var(--border)] pt-5 mb-6">
-        <span className={labelClass}>Let&apos;s talk</span>
-        <a
-          href={hero.calUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-        >
-          cal.com/tomisin-leshi
-        </a>
-      </div>
-
-      {/* ── Directional footer note ──────────────────── */}
-      <p className="text-[15px] text-[#9CA3AF] leading-[1.8]">
-        I write about building, distribution, and African infrastructure. Essays on{' '}
-        <a
-          href="https://substack.com/@tomlesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-        >
-          Substack
-        </a>
-        {' '}&middot; Daily thinking on{' '}
-        <a
-          href="https://twitter.com/tomlesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-        >
-          X
-        </a>
-        {' '}&rarr;{' '}
-        <Link
-          href="/writing"
-          className="text-[#343D4D] dark:text-[#F5F0E8] hover:text-[#9CA3AF] transition-colors no-underline"
-        >
-          Writing
-        </Link>
-      </p>
+      <StickyCallBar />
     </div>
   );
 }

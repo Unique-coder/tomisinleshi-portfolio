@@ -1,27 +1,24 @@
 import Link from 'next/link';
 import { Section } from './Section';
-import { linkRoles, otherCompanies, education } from '../../content/experience';
+import { linkRoles, otherCompanies } from '../../content/experience';
 import { hero } from '../../content/home';
 
 export function ExperienceSection() {
   return (
     <Section id="path" kicker="04 · PATH" title="Frontend hire to CTO in four years." className="mb-16">
 
-      {/* LINK progression — vertical timeline */}
+      {/* LINK progression — vertical timeline, most recent first */}
       <div className="mb-10">
         <p className="text-[13px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-4">
           LINK
         </p>
         <div className="relative pl-6">
-          {/* Vertical connector line */}
           <div
             className="absolute left-[7px] top-2 bottom-2 w-px bg-[var(--border)]"
             aria-hidden="true"
           />
-          {/* Roles — most recent first (reverse the array) */}
           {[...linkRoles].reverse().map((role, i) => (
             <div key={role.title} className="relative mb-6 last:mb-0">
-              {/* Timeline dot */}
               <div
                 className={`absolute -left-6 top-[6px] w-3 h-3 rounded-full border-2 ${
                   i === 0
@@ -54,7 +51,7 @@ export function ExperienceSection() {
       </div>
 
       {/* Other companies */}
-      <div className="mb-10">
+      <div className="mb-8">
         <p className="text-[13px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-4">
           Previously
         </p>
@@ -67,33 +64,12 @@ export function ExperienceSection() {
                 </span>
                 <span className="text-[13px] text-[var(--muted)] ml-3">{role}</span>
               </div>
-              <span className="text-[12px] text-[var(--muted)]">{years}</span>
+              <span className="text-[12px] text-[var(--muted)] shrink-0 ml-4">{years}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Education */}
-      <div className="mb-8">
-        <p className="text-[13px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-4">
-          Education
-        </p>
-        <div className="flex flex-col divide-y divide-[var(--border)]">
-          {education.map(({ school, degree, years }) => (
-            <div key={school} className="flex items-center justify-between py-3">
-              <div>
-                <span className="text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">
-                  {school}
-                </span>
-                <span className="text-[13px] text-[var(--muted)] ml-3">{degree}</span>
-              </div>
-              <span className="text-[12px] text-[var(--muted)]">{years}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Full CV link */}
       <Link
         href={hero.cvPath}
         className="text-[14px] font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"

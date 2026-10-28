@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Sidebar from '@/components/Sidebar';
+import { SiteFooter } from '@/components/SiteFooter';
 import { SITE_URL } from '../../lib/site';
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        <SiteFooter />
         <Analytics />
         <SpeedInsights />
       </body>

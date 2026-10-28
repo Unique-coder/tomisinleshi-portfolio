@@ -10,7 +10,7 @@ export const hero = {
 
 export const proof = [
   { value: '$270K+', label: 'in Stellar Community Fund grants (3 awards)' },
-  { value: '4',      label: 'live payment corridors: NGN, GHS, KES, ZAR' },
+  { value: '10+',    label: 'active payment corridors across African markets' },
   { value: '1st',    label: 'Base Batch hackathon Europe' },
   { value: '5 yrs',  label: 'building payments at LINK' },
 ] as const;
