@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { SITE_URL } from '../../lib/site';
 import { LagosTime } from '@/components/LagosTime';
 import { CopyEmailButton } from '@/components/CopyEmailButton';
-import { Section } from '@/components/Section';
+import { ServicesSection } from '@/components/ServicesSection';
 import { WorkSection } from '@/components/WorkSection';
 import { StackSection } from '@/components/StackSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
+import { WritingSection } from '@/components/WritingSection';
 import { ContactSection } from '@/components/ContactSection';
 import { StickyCallBar } from '@/components/StickyCallBar';
 import { QuestionChips } from '@/components/QuestionChips';
 import { hero, proof } from '../../content/home';
-import { services } from '../../content/services';
 
 export const metadata: Metadata = {
   title: 'Tomisin Leshi: Payment infrastructure for African markets',
@@ -93,12 +92,12 @@ export default function AboutPage() {
             <CopyEmailButton email={hero.email} />
           </div>
 
-          <Link
-            href={hero.cvPath}
+          <a
+            href="#services"
             className="text-[14px] text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
           >
-            Download CV &rarr;
-          </Link>
+            See services &darr;
+          </a>
         </div>
       </div>
 
@@ -117,55 +116,20 @@ export default function AboutPage() {
       {/* ── Question chips ───────────────────────────── */}
       <QuestionChips />
 
-      {/* ── Selected work ────────────────────────────── */}
-      <WorkSection />
-
       {/* ── Services ─────────────────────────────────── */}
-      <Section id="services" kicker="01 · WHAT I DO" title="Where I can help" className="mb-16">
-        <div className="flex flex-col lg:flex-row">
-          {services.map(({ title, for: forLine, bullets, calParam }, i) => (
-            <div
-              key={title}
-              className={[
-                'flex-1 py-8 first:pt-0 lg:py-0 lg:px-6 first:lg:pl-0 last:lg:pr-0 rounded transition-colors hover:bg-[var(--surface)]',
-                i > 0 ? 'border-t lg:border-t-0 lg:border-l border-[var(--border)]' : '',
-              ].join(' ')}
-            >
-              <span className="text-[11px] tracking-[0.12em] font-medium text-[var(--muted)] mb-3 block">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-2">
-                {title}
-              </h3>
-              <p className="text-[13px] text-[var(--muted)] mb-4 leading-snug">
-                For: {forLine}
-              </p>
-              <ul className="flex flex-col gap-2 mb-6 list-none p-0">
-                {bullets.map((b) => (
-                  <li key={b} className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-snug flex gap-2">
-                    <span className="text-[var(--muted)] shrink-0 mt-0.5">→</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={`${hero.calUrl}?service=${calParam}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[14px] font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"
-              >
-                Talk about this &rarr;
-              </a>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <ServicesSection />
+
+      {/* ── Work ─────────────────────────────────────── */}
+      <WorkSection />
 
       {/* ── Stack ────────────────────────────────────── */}
       <StackSection />
 
-      {/* ── Experience ───────────────────────────────── */}
+      {/* ── Path ─────────────────────────────────────── */}
       <ExperienceSection />
+
+      {/* ── Writing ──────────────────────────────────── */}
+      <WritingSection />
 
       {/* ── Contact ──────────────────────────────────── */}
       <ContactSection />

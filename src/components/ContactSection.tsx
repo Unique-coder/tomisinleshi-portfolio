@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Section } from './Section';
 import { CopyEmailButton } from './CopyEmailButton';
 import { hero } from '../../content/home';
@@ -14,13 +13,13 @@ export function ContactSection() {
   return (
     <Section
       id="contact"
-      kicker="05 · CONTACT"
+      kicker="06 · CONTACT"
       title="Building something that has to move money? Let's talk."
       className="mb-16"
     >
       <p className="text-[16px] text-[var(--muted)] leading-[1.8] mb-8 max-w-[56ch]">
-        I take on a small number of builds and advisory projects, and I am open to remote backend
-        roles. The fastest way to reach me is a short call.
+        I take on a small number of builds and advisory projects each quarter. The fastest way to
+        start is a short call.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -33,12 +32,6 @@ export function ContactSection() {
           Book a call
         </a>
         <CopyEmailButton email={hero.email} />
-        <Link
-          href={hero.cvPath}
-          className="flex items-center justify-center min-h-[44px] px-6 border border-[var(--border)] text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors rounded-sm"
-        >
-          Download CV
-        </Link>
       </div>
 
       <div className="flex flex-wrap gap-x-6 gap-y-3">

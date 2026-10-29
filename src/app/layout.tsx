@@ -45,6 +45,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Tomisin Leshi" />
+        {process.env.NEXT_PUBLIC_UMAMI_ID && (
+          <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+          />
+        )}
       </head>
       <body className="antialiased min-h-screen" suppressHydrationWarning>
         <a

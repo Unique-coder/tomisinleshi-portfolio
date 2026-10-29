@@ -81,9 +81,8 @@ export const cvVariants: readonly CVVariantData[] = [
     valueInsight:
       'I joined LINK GLOBAL as the first hire on the frontend. As the routing layer became the product, I moved to backend, designed the multi-corridor architecture, and ended up leading all technical decisions. I ship from API design to the React dashboard.',
     proofOfWork: [
-      'Built the early product UI and internal tooling as first hire, then moved to backend as the routing layer became the core product.',
-      'Shipped the first working corridors: NGN to GHS and NGN to KES.',
-      'Designed the multi-corridor routing architecture that now handles 10+ African payment corridors.',
+      'Built the product UI and internal tooling, then moved to backend as the routing layer became the core product.',
+      'Designed the multi-corridor routing architecture that now handles 10+ corridors, including NGN, GHS, KES and ZAR.',
       '$270K+ in Stellar Community Fund grants for building compliant cross-border payment infrastructure.',
       '1st place, Base Batch hackathon Europe, for Checkout by LINK GLOBAL: on-chain merchant checkout on Base and Solana.',
     ],

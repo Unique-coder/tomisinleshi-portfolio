@@ -11,7 +11,10 @@ export function ExperienceSection() {
   const [open, setOpen] = useState(true);
 
   return (
-    <Section id="path" kicker="04 · PATH" title="Frontend hire to CTO in four years." className="mb-16">
+    <Section id="path" kicker="04 · PATH" title="Frontend hire to CTO in just over two years." className="mb-16">
+      <p className="text-[15px] text-[var(--muted)] leading-[1.75] -mt-4 mb-8 max-w-[52ch]">
+        Five years at LINK, from the first screens to the routing layer.
+      </p>
 
       {/* LINK GLOBAL — collapsible, open by default */}
       <div className="mt-8 border-t border-[var(--border)]">

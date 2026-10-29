@@ -1,28 +1,38 @@
-export type Post = {
+// Static Substack posts — used on both the homepage writing section and the /writing page.
+// Ordered most recent first.
+export type SubstackPost = {
   title: string;
   date: string;
-  summary: string;
-  url: string;
+  description: string;
+  href: string;
 };
 
-// Shown only when the Substack RSS fetch fails
-export const fallbackPosts: Post[] = [
+export const substackPosts: readonly SubstackPost[] = [
   {
-    title: 'How payment routing actually works in African markets',
-    date: '1 Jan 2025',
-    summary: 'A breakdown of how money moves across corridors and why no single provider wins every route.',
-    url: 'https://tomlesh.substack.com',
+    title: "You're Building What You Want to Sell. Not What They Want to Buy.",
+    date: '22 Mar 2026',
+    description:
+      'Why the reason customers buy is never the reason founders build, and what to do about it.',
+    href: 'https://substack.com/@tomlesh/note/c-231661418',
   },
   {
-    title: 'Stablecoins as settlement rails',
-    date: '15 Dec 2024',
-    summary: 'Why stablecoins are becoming the default settlement layer for African cross-border payments.',
-    url: 'https://tomlesh.substack.com',
+    title: 'Understanding the Fear of Building.',
+    date: '22 Mar 2026',
+    description:
+      'The structural reasons founders freeze, and why it is not a psychology problem.',
+    href: 'https://substack.com/@tomlesh/note/c-230752077',
   },
   {
-    title: 'What I learned building a multi-corridor payment API',
-    date: '1 Dec 2024',
-    summary: 'The technical and business lessons from shipping a public payments API from Lagos.',
-    url: 'https://tomlesh.substack.com',
+    title: "Founder's Journey Part 2: The First Mover Disadvantage.",
+    date: '09 Jan 2026',
+    description: 'Why being first is not the advantage most founders think it is.',
+    href: 'https://substack.com/@tomlesh/note/p-183835467',
   },
-];
+  {
+    title: "Founder's Journey",
+    date: '15 Dec 2025',
+    description:
+      'The opening piece. Why I started writing about building, and what I am trying to figure out.',
+    href: 'https://substack.com/@tomlesh/note/p-180068781',
+  },
+] as const;

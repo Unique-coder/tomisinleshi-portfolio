@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
 const pages = [
-  { label: 'Story',      href: '/story' },
-  { label: 'Worldview',  href: '/worldview' },
-  { label: 'Bookshelf',  href: '/bookshelf' },
-  { label: 'Exploring',  href: '/exploring' },
+  { label: 'CV',        href: '/cv' },
+  { label: 'Story',     href: '/gaiyo' },
+  { label: 'Worldview', href: '/worldview' },
+  { label: 'Bookshelf', href: '/bookshelf' },
+  { label: 'Exploring', href: '/exploring' },
 ] as const;
 
 export function SiteFooter() {

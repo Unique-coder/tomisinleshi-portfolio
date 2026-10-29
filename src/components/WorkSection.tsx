@@ -162,7 +162,7 @@ export function WorkSection() {
       {/* Featured entries */}
       <div className="flex flex-col divide-y divide-[var(--border)]">
         {featured.map((item) => (
-          <div key={item.slug} className="py-10 first:pt-0">
+          <div key={item.slug} id={item.anchorId} className="py-10 first:pt-0">
             {/* Name + role line */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
               {item.link ? (
@@ -233,6 +233,7 @@ export function WorkSection() {
             {compact.map((item) => (
               <div
                 key={item.slug}
+                id={item.anchorId}
                 className="flex items-start justify-between gap-4 py-4 min-h-[44px]"
               >
                 <div className="flex-1 min-w-0">

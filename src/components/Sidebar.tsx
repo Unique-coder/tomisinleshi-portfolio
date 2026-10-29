@@ -8,10 +8,10 @@ import { SiSubstack } from 'react-icons/si';
 import { useTheme } from '../../hooks/useTheme';
 import { ThemeToggle } from './ThemeToggle';
 
-// Mobile sheet order per spec: anchors first, pages, Contact last
+// Mobile sheet order: Services first (matches homepage section 01), pages, Contact last
 const MOBILE_NAV = [
-  { label: 'Work',      href: '/#work' },
   { label: 'Services',  href: '/#services' },
+  { label: 'Work',      href: '/#work' },
   { label: 'Writing',   href: '/writing' },
   { label: 'Story',     href: '/gaiyo' },
   { label: 'Worldview', href: '/worldview' },
@@ -20,10 +20,10 @@ const MOBILE_NAV = [
   { label: 'Contact',   href: '/#contact' },
 ];
 
-// Desktop sidebar: new anchors on top, existing pages below a divider
+// Desktop sidebar: Services first to match homepage section order
 const DESKTOP_TOP = [
-  { label: 'WORK',     href: '/#work' },
   { label: 'SERVICES', href: '/#services' },
+  { label: 'WORK',     href: '/#work' },
   { label: 'WRITING',  href: '/writing' },
   { label: 'CONTACT',  href: '/#contact' },
 ];

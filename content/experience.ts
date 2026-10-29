@@ -10,43 +10,47 @@ export type Company = {
   years: string;
 };
 
-// LINK progression — 4 roles, earliest first
+// LINK GLOBAL progression — 4 roles, earliest first
+// Both ExperienceSection and CVLayout reverse this array for display (latest first).
 export const linkRoles: readonly LINKRole[] = [
   {
-    title: 'Frontend Engineer',
-    years: '2021',
+    title: 'Frontend developer',
+    years: 'Aug 2021 to Apr 2022',
     bullets: [
-      'First hire. Built the early product UI and internal tooling.',
+      'Built the product\'s first customer-facing screens, including onboarding and transaction flows for the v1 retail web app.',
     ],
   },
   {
-    title: 'Full-stack Engineer',
-    years: '2021 to 2022',
+    title: 'Full stack engineer',
+    years: 'Apr 2022 to Jul 2023',
     bullets: [
-      'Shipped the first working corridors: NGN to GHS and NGN to KES.',
-      'Moved to backend as the routing layer became the core product.',
+      'Moved the v1 retail product onto the upgraded platform through an API service.',
+      'Set up the architecture and code review practices the team still uses.',
+      'Acted as the bridge between founding decisions and day-to-day delivery.',
     ],
   },
   {
-    title: 'Technical Lead Engineer',
-    years: '2022 to 2023',
+    title: 'Technical lead',
+    years: 'Jul 2023 to Dec 2023',
     bullets: [
-      'Built the Stellar SEP-24 anchor and naira stablecoin across five networks.',
-      'Designed the multi-corridor routing architecture.',
+      'Secured three Stellar Community Fund grants for infrastructure work.',
+      'Sat in on provider and partner negotiations and architecture reviews.',
     ],
   },
   {
     title: 'Co-founder and CTO',
-    years: '2023 to now',
+    years: 'Dec 2023 to now',
     bullets: [
-      'Built and scaled the routing layer and public API from zero to $3M+ moved.',
-      'Led all technical decisions, hiring, and product direction.',
+      'Own the technical direction of the payments platform: architecture, infrastructure, reliability and the engineering roadmap.',
+      'Designed the routing layer that picks the best provider for each currency pair. Three to four million dollars has moved through it.',
+      'Grew the engineering team from just me to four engineers across backend, frontend and security.',
     ],
   },
 ] as const;
 
+// Strich, Inc and himylink AI overlap with early LINK roles — this matches LinkedIn.
 export const otherCompanies: readonly Company[] = [
-  { name: 'Strich Inc',      role: 'Backend Engineer',         years: 'Feb 2022 – Jul 2022' },
-  { name: 'himylink AI',     role: 'Full Stack Engineer',      years: 'Aug 2021 – Dec 2021' },
-  { name: 'Cyprus Robotics', role: 'Junior Software Engineer', years: 'Nov 2020 – Apr 2021' },
+  { name: 'Strich, Inc',     role: 'Backend engineer',                   years: 'Feb 2022 to Jul 2022' },
+  { name: 'himylink AI',     role: 'Full stack engineer, part-time',      years: 'Aug 2021 to Dec 2021' },
+  { name: 'Cyprus Robotics', role: 'Junior software engineer, part-time', years: 'Nov 2020 to Apr 2021' },
 ] as const;

@@ -1,5 +1,6 @@
 export type WorkItem = {
   slug: string;
+  anchorId?: string;
   name: string;
   role: string;
   years?: string;
@@ -16,6 +17,7 @@ export type WorkItem = {
 export const work: readonly WorkItem[] = [
   {
     slug: 'link-routing-api',
+    anchorId: 'work-link-routing',
     name: 'LINK routing layer and public API',
     role: 'Co-founder and CTO, LINK GLOBAL',
     years: '2023 to now',
@@ -50,6 +52,7 @@ export const work: readonly WorkItem[] = [
   },
   {
     slug: 'naira-stablecoin',
+    anchorId: 'work-stablecoin',
     name: 'Naira-backed stablecoin',
     role: 'Engineering, LINK GLOBAL',
     status: 'live',
@@ -59,10 +62,11 @@ export const work: readonly WorkItem[] = [
       'A naira-backed stablecoin issued across five networks: Stellar, Ethereum, Polygon, Arbitrum and Base.',
     ],
     result: '$2M+ in on-chain volume.',
-    stack: ['Stellar', 'Polugon', 'Solidity/EVM', 'Node.js'],
+    stack: ['Stellar', 'Polygon', 'Solidity/EVM', 'Node.js'],
   },
   {
     slug: 'bridgecore',
+    anchorId: 'work-bridgecore',
     name: 'BridgeCore',
     role: 'Lead, LINK GLOBAL',
     status: 'in progress',

@@ -33,11 +33,11 @@ export const questions: readonly Question[] = [
     linkHref: '#contact',
   },
   {
-    id: 'open-to-roles',
-    chip: 'Are you open to roles?',
+    id: 'working-with-you',
+    chip: 'What does working with you look like?',
     answer:
-      'I am open to remote backend engineering roles, especially in payments, fintech infrastructure, or anything that touches money movement at scale. I am based in Lagos, Nigeria and work across time zones.',
-    linkText: 'Download CV',
-    linkHref: '/cv',
+      'Every project starts small: a short call, then a fixed first step like a one-week review or a corridor plan. You get something written and useful before you commit to a full build.',
+    linkText: 'See services',
+    linkHref: '#services',
   },
 ] as const;
