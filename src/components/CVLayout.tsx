@@ -134,7 +134,7 @@ export function CVLayout() {
                   linkio.world
                 </a>
               </div>
-              <span className="text-[12px] text-[var(--muted)] shrink-0">2021 to now</span>
+              <span className="text-[12px] text-[var(--muted)] shrink-0">Aug 2021 to now</span>
             </div>
             <div className="flex flex-col gap-4">
               {roles.map((role) => (
@@ -160,13 +160,16 @@ export function CVLayout() {
 
           {/* Other companies */}
           <div className="flex flex-col divide-y divide-[var(--border)]">
-            {otherCompanies.map(({ name, role, years }) => (
-              <div key={name} className="flex items-center justify-between py-2">
-                <div>
-                  <span className="text-[14px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">{name}</span>
-                  <span className="text-[13px] text-[var(--muted)] ml-2">{role}</span>
+            {otherCompanies.map(({ name, role, years, bullet }) => (
+              <div key={name} className="py-2">
+                <div className="flex items-baseline justify-between gap-4">
+                  <div>
+                    <span className="text-[14px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">{name}</span>
+                    <span className="text-[13px] text-[var(--muted)] ml-2">{role}</span>
+                  </div>
+                  <span className="text-[12px] text-[var(--muted)] shrink-0 ml-4">{years}</span>
                 </div>
-                <span className="text-[12px] text-[var(--muted)] shrink-0 ml-4">{years}</span>
+                <p className="text-[13px] text-[var(--muted)] leading-snug mt-1">{bullet}</p>
               </div>
             ))}
           </div>

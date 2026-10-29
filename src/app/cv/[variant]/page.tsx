@@ -15,7 +15,7 @@ export function generateMetadata({
 }): Metadata {
   const v = getCVVariant(params.variant);
   return {
-    title: `CV (${v.label}) — Tomisin Leshi`,
+    title: `CV (${v.label}): Tomisin Leshi`,
     robots: 'noindex',
   };
 }

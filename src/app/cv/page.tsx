@@ -3,9 +3,9 @@ import { SITE_URL } from '../../../lib/site';
 import { CVLayout } from '@/components/CVLayout';
 
 export const metadata: Metadata = {
-  title: 'CV — Tomisin Leshi',
+  title: 'CV: Tomisin Leshi',
   description:
-    'Payment infrastructure engineer. 5 years building the systems that move money across African borders.',
+    'Payment infrastructure engineer. Five years at LINK building the systems that move money across African borders.',
   alternates: { canonical: `${SITE_URL}/cv` },
 };
 

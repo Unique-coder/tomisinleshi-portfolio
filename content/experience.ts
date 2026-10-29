@@ -8,6 +8,7 @@ export type Company = {
   name: string;
   role: string;
   years: string;
+  bullet: string;
 };
 
 // LINK GLOBAL progression — 4 roles, earliest first
@@ -50,7 +51,22 @@ export const linkRoles: readonly LINKRole[] = [
 
 // Strich, Inc and himylink AI overlap with early LINK roles — this matches LinkedIn.
 export const otherCompanies: readonly Company[] = [
-  { name: 'Strich, Inc',     role: 'Backend engineer',                   years: 'Feb 2022 to Jul 2022' },
-  { name: 'himylink AI',     role: 'Full stack engineer, part-time',      years: 'Aug 2021 to Dec 2021' },
-  { name: 'Cyprus Robotics', role: 'Junior software engineer, part-time', years: 'Nov 2020 to Apr 2021' },
+  {
+    name: 'Strich, Inc',
+    role: 'Backend engineer',
+    years: 'Feb 2022 to Jul 2022',
+    bullet: 'Introduced microservices for POS and wallet integration, and built the REST API behind daily mobile POS and wallet requests.',
+  },
+  {
+    name: 'himylink AI',
+    role: 'Full stack engineer, part-time',
+    years: 'Aug 2021 to Dec 2021',
+    bullet: 'Built Python/Django endpoints for an AI business dashboard serving 2K+ concurrent users.',
+  },
+  {
+    name: 'Cyprus Robotics',
+    role: 'Junior software engineer, part-time',
+    years: 'Nov 2020 to Apr 2021',
+    bullet: 'Programmed control and telemetry for an autonomous underwater vehicle, with PID-based navigation in C++.',
+  },
 ] as const;
