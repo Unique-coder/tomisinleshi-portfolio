@@ -11,20 +11,27 @@ import { WritingSection } from '@/components/WritingSection';
 import { ContactSection } from '@/components/ContactSection';
 import { StickyCallBar } from '@/components/StickyCallBar';
 import { QuestionChips } from '@/components/QuestionChips';
-import { hero, proof } from '../../content/home';
+import { HeroAudienceParts } from '@/components/HeroAudienceParts';
+import { ProofStrip } from '@/components/ProofStrip';
+import { AudienceProvider } from '@/contexts/audience-context';
+import { hero } from '../../content/home';
+import { resolveAudienceKey } from '../../content/audiences';
 
 export const metadata: Metadata = {
-  title: 'Tomisin Leshi: Payment infrastructure for African markets',
-  description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+  title: 'Tomisin Leshi: Technical lead for zero-to-one products',
+  description:
+    'I lead the teams that take products from zero to one. Co-founder and CTO at LINK GLOBAL, where the payment systems I built have moved $3M+. Fintech, SaaS and AI.',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'Tomisin Leshi: Payment infrastructure for African markets',
-    description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+    title: 'Tomisin Leshi: Technical lead for zero-to-one products',
+    description:
+      'I lead the teams that take products from zero to one. Co-founder and CTO at LINK GLOBAL, where the payment systems I built have moved $3M+. Fintech, SaaS and AI.',
     url: SITE_URL,
   },
   twitter: {
-    title: 'Tomisin Leshi: Payment infrastructure for African markets',
-    description: 'I build the systems that move money across African borders. Cross-border payment rails, stablecoin products and backend systems. Based in Lagos, working remote.',
+    title: 'Tomisin Leshi: Technical lead for zero-to-one products',
+    description:
+      'I lead the teams that take products from zero to one. Co-founder and CTO at LINK GLOBAL, where the payment systems I built have moved $3M+. Fintech, SaaS and AI.',
   },
 };
 
@@ -42,99 +49,93 @@ const personSchema = {
   ],
 };
 
-export default function AboutPage() {
-  return (
-    <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
+export default async function AboutPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ for?: string }>;
+}) {
+  const params = await searchParams;
+  const initialKey = resolveAudienceKey(params.for);
 
-      {/* ── Hero ─────────────────────────────────────── */}
-      <div className="flex flex-col md:flex-row-reverse md:items-start gap-6 mb-10">
-        <Image
-          src={hero.photo}
-          alt="Tomisin Leshi"
-          width={160}
-          height={160}
-          priority
-          sizes="(max-width: 767px) 96px, 160px"
-          className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover object-top shrink-0 md:mt-8"
+  return (
+    <AudienceProvider initialKey={initialKey}>
+      <div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
 
-        <div className="flex-1 min-w-0">
-          <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
-            LAGOS &middot; <LagosTime /> &middot; PAYMENTS &amp; BACKEND ENGINEER
-          </p>
+        {/* ── Hero ─────────────────────────────────────── */}
+        <div className="flex flex-col md:flex-row-reverse md:items-start gap-6 mb-10">
+          <Image
+            src={hero.photo}
+            alt="Tomisin Leshi"
+            width={160}
+            height={160}
+            priority
+            sizes="(max-width: 767px) 96px, 160px"
+            className="w-24 h-24 md:w-[160px] md:h-[160px] rounded-xl object-cover object-top shrink-0 md:mt-8"
+          />
 
-          <h1 className="text-[clamp(1.75rem,5vw,2.5rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-tight mb-4">
-            {hero.h1}
-          </h1>
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
+              LAGOS &middot; <LagosTime /> &middot; TECHNICAL LEAD &amp; PRODUCT ENGINEER
+            </p>
 
-          <p className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.8] mb-6 max-w-[52ch]">
-            {hero.sub}
-          </p>
+            <h1 className="text-[clamp(1.75rem,5vw,2.5rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-tight mb-4">
+              {hero.h1}
+            </h1>
 
-          <div className="flex items-start gap-2 text-[13px] text-[var(--muted)] mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 mt-[5px]" aria-hidden="true" />
-            <span>{hero.availability}</span>
-          </div>
+            {/* Audience-sensitive: switch control, sub line, pill */}
+            <HeroAudienceParts />
 
-          <div id="hero-cta" className="flex flex-col md:flex-row gap-3 mb-4">
+            <div id="hero-cta" className="flex flex-col md:flex-row gap-3 mb-4">
+              <a
+                href={hero.calUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+              >
+                Book a call
+              </a>
+              <CopyEmailButton email={hero.email} />
+            </div>
+
             <a
-              href={hero.calUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+              href="#services"
+              className="text-[14px] text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
             >
-              Book a call
+              See services &darr;
             </a>
-            <CopyEmailButton email={hero.email} />
           </div>
-
-          <a
-            href="#services"
-            className="text-[14px] text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
-          >
-            See services &darr;
-          </a>
         </div>
+
+        {/* ── Proof strip ──────────────────────────────── */}
+        <ProofStrip />
+
+        {/* ── Question chips ───────────────────────────── */}
+        <QuestionChips />
+
+        {/* ── Services ─────────────────────────────────── */}
+        <ServicesSection />
+
+        {/* ── Work ─────────────────────────────────────── */}
+        <WorkSection />
+
+        {/* ── Stack ────────────────────────────────────── */}
+        <StackSection />
+
+        {/* ── Path ─────────────────────────────────────── */}
+        <ExperienceSection />
+
+        {/* ── Writing ──────────────────────────────────── */}
+        <WritingSection />
+
+        {/* ── Contact ──────────────────────────────────── */}
+        <ContactSection />
+
+        <StickyCallBar />
       </div>
-
-      {/* ── Proof strip ──────────────────────────────── */}
-      <div className="border-y border-[var(--border)] py-6 mb-16 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6">
-        {proof.map(({ value, label }) => (
-          <div key={value} className="flex flex-col gap-1">
-            <span className="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-none tabular-nums">
-              {value}
-            </span>
-            <span className="text-[12px] text-[var(--muted)] leading-snug">{label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Question chips ───────────────────────────── */}
-      <QuestionChips />
-
-      {/* ── Services ─────────────────────────────────── */}
-      <ServicesSection />
-
-      {/* ── Work ─────────────────────────────────────── */}
-      <WorkSection />
-
-      {/* ── Stack ────────────────────────────────────── */}
-      <StackSection />
-
-      {/* ── Path ─────────────────────────────────────── */}
-      <ExperienceSection />
-
-      {/* ── Writing ──────────────────────────────────── */}
-      <WritingSection />
-
-      {/* ── Contact ──────────────────────────────────── */}
-      <ContactSection />
-
-      <StickyCallBar />
-    </div>
+    </AudienceProvider>
   );
 }

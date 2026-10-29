@@ -10,7 +10,7 @@ export function WritingSection() {
     <Section
       id="writing"
       kicker="05 · WRITING"
-      title="I write about how money moves in and out of African markets"
+      title="I write about building products, founders, and how money moves"
       className="mb-16"
     >
       {/* LinkedIn posts — horizontal scroll on mobile, 3-col on md+ */}

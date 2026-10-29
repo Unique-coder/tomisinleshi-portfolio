@@ -6,7 +6,6 @@ export type Question = {
   linkHref?: string;
 };
 
-// TODO: review each answer before publishing
 export const questions: readonly Question[] = [
   {
     id: 'building-now',
@@ -17,18 +16,18 @@ export const questions: readonly Question[] = [
     linkHref: '#work',
   },
   {
-    id: 'payment-corridor',
-    chip: 'How does a payment corridor work?',
+    id: 'zero-to-one',
+    chip: 'How do you take a product from zero to one?',
     answer:
-      'A corridor is a route between two currencies: you send NGN and the recipient receives KES. Our routing layer evaluates multiple providers in real time, picks the best one for that pair, and handles settlement, reconciliation, and webhook delivery. The same system works across 10+ corridors without you changing your integration.',
-    linkText: 'See how we built it',
-    linkHref: '#work',
+      'I start with the customer and the problem, not the code. We cut the idea to the smallest version someone would pay for, pick a stack the team can run, then build in short releases. At LINK that took us from a v1 retail app to an API platform.',
+    linkText: 'See services',
+    linkHref: '#services',
   },
   {
-    id: 'help-fintech',
-    chip: 'Can you help my fintech?',
+    id: 'help-product',
+    chip: 'Can you help my product or team?',
     answer:
-      'Yes. I take on a small number of builds and advisory projects each quarter: cross-border rails, stablecoin settlement products, and architecture reviews for teams before a raise or launch. The fastest way to find out is a short call.',
+      'Yes, if it is early and moving. I take on a small number of lead and advisory projects each quarter, across fintech, SaaS and AI. The fastest way to find out is a short call.',
     linkText: 'Book a call',
     linkHref: '#contact',
   },
@@ -36,7 +35,7 @@ export const questions: readonly Question[] = [
     id: 'working-with-you',
     chip: 'What does working with you look like?',
     answer:
-      'Every project starts small: a short call, then a fixed first step like a one-week review or a corridor plan. You get something written and useful before you commit to a full build.',
+      'Every project starts small: a short call, then a fixed first step like a one-week product sprint or a corridor plan. You get something written and useful before you commit to a full build.',
     linkText: 'See services',
     linkHref: '#services',
   },

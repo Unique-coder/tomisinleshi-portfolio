@@ -14,4 +14,4 @@ export const stack: readonly StackGroup[] = [
 ] as const;
 
 export const stackPatterns =
-  'Most payment bugs live in the gaps: between your API and the provider, between an event and its handler, between what you log and what actually happened. The stack I reach for makes those gaps visible.';
+  'Most bugs live in the gaps: between your API and the next service, between an event and its handler, between what you log and what actually happened. The stack I reach for makes those gaps visible.';

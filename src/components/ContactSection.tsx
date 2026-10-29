@@ -1,6 +1,9 @@
+'use client';
+
 import { Section } from './Section';
 import { CopyEmailButton } from './CopyEmailButton';
 import { hero } from '../../content/home';
+import { useAudience } from '../contexts/audience-context';
 
 const socials = [
   { label: 'LinkedIn',        href: 'https://www.linkedin.com/in/tomisin-leshi/' },
@@ -10,16 +13,18 @@ const socials = [
 ] as const;
 
 export function ContactSection() {
+  const { audience } = useAudience();
+
   return (
     <Section
       id="contact"
       kicker="06 · CONTACT"
-      title="Building something that has to move money? Let's talk."
+      title={audience.contactHeading}
       className="mb-16"
     >
       <p className="text-[16px] text-[var(--muted)] leading-[1.8] mb-8 max-w-[56ch]">
-        I take on a small number of builds and advisory projects each quarter. The fastest way to
-        start is a short call.
+        Fintech, SaaS or AI, I take on a small number of lead and advisory projects each quarter.
+        The fastest way to start is a short call.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-8">
