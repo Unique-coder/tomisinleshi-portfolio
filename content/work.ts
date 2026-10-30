@@ -154,7 +154,7 @@ export const work: readonly WorkItem[] = [
     slug: "voyza",
     name: "Voyza",
     role: "",
-    status: "validation",
+    status: "live",
     group: "beyond",
     featured: false,
     built: [
