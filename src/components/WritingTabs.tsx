@@ -51,7 +51,7 @@ function PostRow({ post }: { post: UnifiedPost }) {
           href={post.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[16px] font-medium text-[#343D4D] dark:text-[#F5F0E8] hover:text-[var(--accent)] transition-colors no-underline leading-snug"
+          className="text-[16px] font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors no-underline leading-snug"
         >
           {post.title} &#x2197;
         </a>
@@ -63,13 +63,13 @@ function PostRow({ post }: { post: UnifiedPost }) {
         {post.description}
       </p>
       <div className="flex items-center gap-3">
-        <span className="text-[11px] tracking-[0.08em] uppercase text-[var(--muted)]">
+        <span className="text-[12px] tracking-[0.08em] uppercase text-[var(--muted)]">
           {post.platform}
         </span>
         {post.impressions && (
           <>
             <span className="text-[var(--border)]" aria-hidden="true">·</span>
-            <span className="text-[11px] text-[var(--muted)]">
+            <span className="text-[12px] text-[var(--muted)]">
               {post.impressions} impressions
             </span>
           </>
@@ -100,8 +100,8 @@ export function WritingTabs({ posts }: { posts: UnifiedPost[] }) {
               onClick={() => setActive(tab)}
               className={`px-3 py-1.5 text-[13px] font-medium rounded-sm transition-colors min-h-[36px] ${
                 active === tab
-                  ? 'bg-[var(--surface)] text-[#343D4D] dark:text-[#F5F0E8]'
-                  : 'text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+                  ? 'bg-[var(--surface)] text-[var(--text)]'
+                  : 'text-[var(--muted)] hover:text-[var(--text)]'
               }`}
             >
               {tab}

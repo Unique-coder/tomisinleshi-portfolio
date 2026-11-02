@@ -4,35 +4,40 @@
 
 /* ── Design tokens ─────────────────────────────────── */
 :root {
-  --bg:           #FFFFFF;
-  --surface:      #F9FAFB;   /* slightly elevated panels */
-  --text:         #343D4D;
-  --muted:        #9CA3AF;
-  --border:       #E5E7EB;
-  --accent:       #1E4D80;   /* muted navy — 8.71:1 on white, AA ✓ */
+  --bg:         #FAFAF9;
+  --surface:    #F4F4F5;
+  --border:     #E4E4E7;
+  --text:       #0A0A0A;
+  --muted:      #52525B;
+  --subtle:     #A1A1AA;
+  --accent:     #059669;
+  --accent-fg:  #FFFFFF;
+  --button-bg:  #0A0A0A;
+  --button-fg:  #FAFAF9;
 
-  /* backward-compat aliases used throughout existing pages */
+  /* backward-compat aliases */
   --text-primary: var(--text);
   --text-muted:   var(--muted);
 }
 
+:root[data-theme="dark"],
 .dark {
-  --bg:           #343D4D;
-  --surface:      #3D4A5C;
-  --text:         #F5F0E8;
-  --muted:        #9CA3AF;
-  --border:       #4A5568;
-  --accent:       #93C5FD;   /* sky blue — 5.88:1 on dark bg, AA ✓ */
+  --bg:         #0B0B0C;
+  --surface:    #131315;
+  --border:     #232326;
+  --text:       #EDEDEC;
+  --muted:      #A1A1AA;
+  --subtle:     #71717A;
+  --accent:     #34D399;
+  --accent-fg:  #0B0B0C;
+  --button-bg:  #EDEDEC;
+  --button-fg:  #0B0B0C;
 
   --text-primary: var(--text);
   --text-muted:   var(--muted);
 }
 
 /* ── Base typography ────────────────────────────────── */
-* {
-  font-family: 'Tahoma', 'Geneva', sans-serif;
-}
-
 html {
   font-size: 16px;
 }
@@ -44,13 +49,41 @@ html, body {
 }
 
 body {
-  font-size: clamp(1rem, 1.5vw, 1.0625rem); /* 16–17px */
-  line-height: 1.8;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.0625rem);
+  line-height: 1.65;
 }
 
-/* fluid h1 — only kicks in where no explicit Tailwind text-[...] class is set */
+/* headings */
 h1 {
-  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-size: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw + 0.75rem, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.125rem, 1vw + 0.75rem, 1.25rem);
+  font-weight: 600;
+}
+
+p {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* mono elements */
+code, kbd, samp, pre,
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, "Cascadia Code", monospace;
 }
 
 /* ── Scroll behaviour ───────────────────────────────── */
@@ -60,8 +93,8 @@ h1 {
 
 /* ── Accessibility ──────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   border-radius: 2px;
 }
 
@@ -71,3 +104,8 @@ h1 {
   to   { opacity: 1; }
 }
 .animate-fade-in { animation: fadeIn 0.2s ease forwards; }
+
+/* ── Print (CV) ─────────────────────────────────────── */
+@media print {
+  * { color: #000 !important; background: #fff !important; border-color: #e5e7eb !important; }
+}

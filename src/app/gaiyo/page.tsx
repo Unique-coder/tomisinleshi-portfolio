@@ -35,33 +35,33 @@ export default function GaiyoPage() {
   return (
     <div>
       {/* Title */}
-      <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
+      <h1 className="text-[1.5rem] font-normal text-[var(--text)] mb-1">
         Story
       </h1>
 
       {/* Subtitle */}
-      <p className="text-[15px] text-[#9CA3AF] mb-8">my story</p>
+      <p className="text-[15px] text-[var(--muted)] mb-8">my story</p>
 
       {/* Milestones — moved above narrative */}
       <Collapsible label="Milestones" defaultOpen={true}>
         <div className="relative flex flex-col mt-4">
           {/* Full-height connecting line */}
           <div
-            className="absolute w-px bg-[#D1D5DB] dark:bg-[#4A5568]"
+            className="absolute w-px bg-[var(--border)]"
             style={{ left: '10px', top: '15px', bottom: '15px' }}
           />
 
           {accomplishments.map((item) => (
             <div key={item.title} className="flex items-start gap-5 mb-6 last:mb-0">
               <div className="w-5 flex-shrink-0 flex justify-center mt-[6px]">
-                <div className="w-[9px] h-[9px] rounded-full bg-[#343D4D] dark:bg-[#F5F0E8]" />
+                <div className="w-[9px] h-[9px] rounded-full bg-[var(--button-bg)]" />
               </div>
               <div>
-                <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-relaxed">
+                <span className="text-[16px] text-[var(--text)] leading-relaxed">
                   {item.title}
                 </span>
                 {item.detail && (
-                  <span className="block text-[13px] text-[#9CA3AF] mt-[2px]">
+                  <span className="block text-[13px] text-[var(--muted)] mt-[2px]">
                     {item.detail}
                   </span>
                 )}
@@ -72,7 +72,7 @@ export default function GaiyoPage() {
       </Collapsible>
 
       {/* Prose — below milestones */}
-      <div className="flex flex-col gap-5 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8] mt-10">
+      <div className="flex flex-col gap-5 leading-[1.8] text-[16px] text-[var(--text)] mt-10">
         <p>
           I didn&apos;t start as a founder. I started as someone who needed to understand
           how things worked.

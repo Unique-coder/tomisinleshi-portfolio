@@ -14,7 +14,7 @@ export function SiteFooter() {
       <div className="max-w-[860px] mx-auto px-4 md:px-8 py-8">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
           <div>
-            <p className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+            <p className="text-[15px] font-semibold text-[var(--text)]">
               Tomisin Leshi
             </p>
             <p className="text-[13px] text-[var(--muted)]">

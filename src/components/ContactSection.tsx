@@ -32,7 +32,7 @@ export function ContactSection() {
           href={hero.calUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+          className="flex items-center justify-center min-h-[44px] px-6 bg-[var(--button-bg)] text-[var(--button-fg)] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
         >
           Book a call
         </a>
@@ -46,7 +46,7 @@ export function ContactSection() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-h-[44px] flex items-center text-[15px] text-[#343D4D] dark:text-[#F5F0E8] hover:text-[var(--accent)] transition-colors"
+            className="min-h-[44px] flex items-center text-[15px] text-[var(--text)] hover:text-[var(--accent)] transition-colors"
           >
             {label}
           </a>

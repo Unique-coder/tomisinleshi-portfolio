@@ -30,7 +30,7 @@ export function AudienceSwitch() {
       aria-label="Choose audience"
       className="flex flex-wrap items-center gap-x-1 gap-y-1 mb-5"
     >
-      <span className="text-[12px] text-[var(--muted)] mr-1 shrink-0 font-medium tracking-wide uppercase">
+      <span className="font-mono text-[12px] text-[var(--muted)] mr-1 shrink-0 font-medium tracking-wide uppercase">
         For:
       </span>
       {audiences.map((a, i) => {
@@ -48,8 +48,8 @@ export function AudienceSwitch() {
             data-umami-event-audience={a.key}
             className={`min-h-[44px] px-3 py-1 rounded-sm text-[13px] font-medium transition-colors ${
               isSelected
-                ? 'bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D]'
-                : 'text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+                ? 'bg-[var(--button-bg)] text-[var(--button-fg)]'
+                : 'text-[var(--muted)] hover:text-[var(--text)]'
             }`}
           >
             {a.label}

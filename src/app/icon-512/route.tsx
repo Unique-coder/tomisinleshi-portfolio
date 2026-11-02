@@ -12,11 +12,11 @@ export function GET() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#343D4D',
+          backgroundColor: '#0B0B0C',
           borderRadius: 100,
         }}
       >
-        <span style={{ fontSize: 220, fontWeight: 700, color: '#F5F0E8', fontFamily: 'sans-serif' }}>
+        <span style={{ fontSize: 220, fontWeight: 700, color: '#EDEDEC', fontFamily: 'sans-serif' }}>
           TL
         </span>
       </div>

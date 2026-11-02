@@ -26,10 +26,10 @@ export function ServicesSection() {
         {ordered.map((service, i) => (
           <div key={service.slug} className="py-10 first:pt-0 last:pb-0">
             {/* Number + title */}
-            <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-2">
+            <p className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-2">
               {String(i + 1).padStart(2, '0')}
             </p>
-            <h3 className="text-[clamp(1.1rem,3vw,1.35rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-snug mb-3">
+            <h3 className="text-[clamp(1.1rem,3vw,1.35rem)] font-semibold text-[var(--text)] leading-snug mb-3">
               {service.title}
             </h3>
 
@@ -45,7 +45,7 @@ export function ServicesSection() {
               {service.outcomes.map((o) => (
                 <li
                   key={o}
-                  className="flex gap-2 text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.7]"
+                  className="flex gap-2 text-[15px] text-[var(--text)] leading-[1.7]"
                 >
                   <span className="text-[var(--muted)] shrink-0 mt-0.5 select-none">→</span>
                   {o}
@@ -61,7 +61,7 @@ export function ServicesSection() {
 
             <div className="border border-[var(--border)] rounded px-4 py-3 mb-3 max-w-[58ch]">
               <p className="text-[13px] text-[var(--muted)] leading-[1.6]">
-                <span className="font-medium text-[#343D4D] dark:text-[#F5F0E8]">How we start:</span>{' '}
+                <span className="font-medium text-[var(--text)]">How we start:</span>{' '}
                 {service.start}
               </p>
             </div>
@@ -78,7 +78,7 @@ export function ServicesSection() {
               href={`${hero.calUrl}?service=${service.slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-[var(--button-bg)] text-[var(--button-fg)] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
               data-umami-event="service_click"
               data-umami-event-service={service.slug}
             >

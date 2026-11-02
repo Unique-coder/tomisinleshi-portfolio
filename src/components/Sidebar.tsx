@@ -50,8 +50,8 @@ function isActive(href: string, pathname: string): boolean {
 function navLinkCls(href: string, pathname: string) {
   return `text-[12px] tracking-[0.08em] font-medium no-underline transition-colors ${
     isActive(href, pathname)
-      ? 'text-[#343D4D] dark:text-[#F5F0E8]'
-      : 'text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+      ? 'text-[var(--text)]'
+      : 'text-[var(--muted)] hover:text-[var(--text)]'
   }`;
 }
 
@@ -118,7 +118,7 @@ export default function Sidebar() {
         <div className="flex items-center justify-between mb-8">
           <Link
             href="/"
-            className="font-serif text-lg font-semibold text-[#343D4D] dark:text-[#F5F0E8] no-underline"
+            className="font-sans text-lg font-semibold text-[var(--text)] no-underline"
           >
             TL
           </Link>
@@ -149,17 +149,17 @@ export default function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+              className="text-[var(--muted)] hover:text-[var(--text)] transition-colors"
             >
               {icon}
             </a>
           ))}
         </div>
 
-        <p className="text-[10px] tracking-wide text-[#9CA3AF] whitespace-nowrap">
+        <p className="text-[12px] tracking-wide text-[var(--muted)] whitespace-nowrap">
           &copy; TOMISIN LESHI &middot; {new Date().getFullYear()}
         </p>
-        <p className="text-[10px] text-[#9CA3AF] italic mt-1">/toh&middot;mi&middot;sin leh&middot;shi/</p>
+        <p className="text-[12px] text-[var(--muted)] italic mt-1">/toh&middot;mi&middot;sin leh&middot;shi/</p>
       </aside>
 
       {/* ── Mobile sticky top bar (<768px) ─────────── */}
@@ -168,7 +168,7 @@ export default function Sidebar() {
       >
         <Link
           href="/"
-          className="font-serif text-sm font-semibold text-[#343D4D] dark:text-[#F5F0E8] no-underline"
+          className="font-sans text-sm font-semibold text-[var(--text)] no-underline"
         >
           TL
         </Link>
@@ -181,7 +181,7 @@ export default function Sidebar() {
             <button
               onClick={toggle}
               aria-label="Toggle dark mode"
-              className="w-10 h-[22px] rounded-full bg-[#E5E7EB] border border-[#D1D5DB]"
+              className="w-10 h-[22px] rounded-full bg-[var(--surface)] border border-[var(--border)]"
               suppressHydrationWarning
             />
           )}
@@ -191,7 +191,7 @@ export default function Sidebar() {
             aria-label="Open navigation menu"
             aria-expanded={open}
             aria-controls="mobile-nav-sheet"
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[11px] tracking-[0.08em] font-medium text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[12px] tracking-[0.08em] font-medium text-[var(--muted)] hover:text-[var(--text)] transition-colors"
           >
             Menu
           </button>
@@ -224,14 +224,14 @@ export default function Sidebar() {
               <Link
                 href="/"
                 onClick={close}
-                className="font-serif text-sm font-semibold text-[#343D4D] dark:text-[#F5F0E8] no-underline"
+                className="font-sans text-sm font-semibold text-[var(--text)] no-underline"
               >
                 TL
               </Link>
               <button
                 onClick={close}
                 aria-label="Close navigation menu"
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[11px] tracking-[0.08em] font-medium text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[12px] tracking-[0.08em] font-medium text-[var(--muted)] hover:text-[var(--text)] transition-colors"
               >
                 Close
               </button>
@@ -243,7 +243,7 @@ export default function Sidebar() {
                   key={href}
                   href={href}
                   onClick={close}
-                  className="flex items-center min-h-[56px] border-t border-[var(--border)] text-[16px] font-medium text-[#343D4D] dark:text-[#F5F0E8] no-underline hover:text-[var(--accent)] transition-colors"
+                  className="flex items-center min-h-[56px] border-t border-[var(--border)] text-[16px] font-medium text-[var(--text)] no-underline hover:text-[var(--accent)] transition-colors"
                 >
                   {label}
                 </Link>
@@ -259,13 +259,13 @@ export default function Sidebar() {
                   rel="noopener noreferrer"
                   aria-label={label}
                   onClick={close}
-                  className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+                  className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[var(--muted)] hover:text-[var(--text)] transition-colors"
                 >
                   {icon}
                 </a>
               ))}
             </div>
-            <p className="text-[11px] text-[#9CA3AF] italic pb-6">/toh&middot;mi&middot;sin leh&middot;shi/</p>
+            <p className="text-[12px] text-[var(--muted)] italic pb-6">/toh&middot;mi&middot;sin leh&middot;shi/</p>
           </div>
         </div>
       )}

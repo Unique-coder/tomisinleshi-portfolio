@@ -19,12 +19,12 @@ export default function Collapsible({ label, children, defaultOpen = false }: Co
         className="w-full flex items-center justify-between py-4 text-left"
         aria-expanded={open}
       >
-        <span className="text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF]">
+        <span className="text-[12px] tracking-[0.1em] font-medium uppercase text-[var(--muted)]">
           {label}
         </span>
         <ChevronRight
           size={14}
-          className={`text-[#9CA3AF] transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
+          className={`text-[var(--muted)] transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
         />
       </button>
       <div

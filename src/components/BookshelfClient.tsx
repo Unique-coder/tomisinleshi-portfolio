@@ -46,23 +46,23 @@ function getLastName(author: string | null): string {
 
 function StatusDot({ status }: { status: string }) {
   if (status === 'read') {
-    return <span className="text-[8px] text-[#343D4D] dark:text-[#F5F0E8] mr-3 leading-none flex-shrink-0 mt-[3px]">●</span>;
+    return <span className="text-[8px] text-[var(--text)] mr-3 leading-none flex-shrink-0 mt-[3px]">●</span>;
   }
   if (status === 'reading') {
-    return <span className="text-[8px] text-[#9CA3AF] mr-3 leading-none flex-shrink-0 mt-[3px]">◑</span>;
+    return <span className="text-[8px] text-[var(--muted)] mr-3 leading-none flex-shrink-0 mt-[3px]">◑</span>;
   }
-  return <span className="text-[8px] text-[#9CA3AF] mr-3 leading-none flex-shrink-0 mt-[3px]">○</span>;
+  return <span className="text-[8px] text-[var(--muted)] mr-3 leading-none flex-shrink-0 mt-[3px]">○</span>;
 }
 
 function BookRow({ book }: { book: Book }) {
   return (
     <div className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
       <StatusDot status={book.status} />
-      <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{book.title}</span>
+      <span className="text-[16px] text-[var(--text)]">{book.title}</span>
       {book.author && (
         <>
-          <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
-          <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
+          <span className="text-[16px] text-[var(--muted)] mx-1">·</span>
+          <span className="text-[15px] text-[var(--muted)]">{book.author}</span>
         </>
       )}
     </div>
@@ -81,10 +81,10 @@ function FilterBtn({
   return (
     <button
       onClick={onClick}
-      className={`text-[11px] tracking-widest uppercase transition-colors ${
+      className={`text-[12px] tracking-widest uppercase transition-colors ${
         active
-          ? 'text-[#343D4D] dark:text-[#F5F0E8] font-semibold'
-          : 'text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+          ? 'text-[var(--text)] font-semibold'
+          : 'text-[var(--muted)] hover:text-[var(--text)]'
       }`}
     >
       {label}
@@ -92,7 +92,7 @@ function FilterBtn({
   );
 }
 
-const Dot = () => <span className="text-[#9CA3AF] text-[11px]">·</span>;
+const Dot = () => <span className="text-[var(--muted)] text-[12px]">·</span>;
 
 export default function BookshelfClient({ books }: BookshelfClientProps) {
   const [category, setCategory] = useState<Category>('all');
@@ -159,7 +159,7 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
   const finishedCount = useMemo(() => books.filter((b) => b.status === 'read').length, [books]);
   const toReadCount = useMemo(() => books.filter((b) => b.status === 'to_read').length, [books]);
 
-  const labelClass = 'text-[11px] tracking-[0.1em] font-medium uppercase text-[#9CA3AF]';
+  const labelClass = 'text-[12px] tracking-[0.1em] font-medium uppercase text-[var(--muted)]';
 
   return (
     <div>
@@ -257,12 +257,12 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               const book = books.find((b) => b.title === title);
               return (
                 <div key={title} className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
-                  <span className="text-[8px] text-[#343D4D] dark:text-[#F5F0E8] mr-3 leading-none flex-shrink-0">●</span>
-                  <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
+                  <span className="text-[8px] text-[var(--text)] mr-3 leading-none flex-shrink-0">●</span>
+                  <span className="text-[16px] text-[var(--text)]">{title}</span>
                   {book?.author && (
                     <>
-                      <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
-                      <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
+                      <span className="text-[16px] text-[var(--muted)] mx-1">·</span>
+                      <span className="text-[15px] text-[var(--muted)]">{book.author}</span>
                     </>
                   )}
                 </div>
@@ -270,7 +270,7 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
             })}
             <button
               onClick={handleViewAllFinished}
-              className="mt-3 text-[12px] text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+              className="mt-3 text-[12px] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
             >
               View all finished ({finishedCount})
             </button>
@@ -283,12 +283,12 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
               const book = books.find((b) => b.title === title);
               return (
                 <div key={title} className="flex items-baseline py-[6px] border-b border-[var(--border)] last:border-0">
-                  <span className="text-[8px] text-[#9CA3AF] mr-3 leading-none flex-shrink-0">○</span>
-                  <span className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">{title}</span>
+                  <span className="text-[8px] text-[var(--muted)] mr-3 leading-none flex-shrink-0">○</span>
+                  <span className="text-[16px] text-[var(--text)]">{title}</span>
                   {book?.author && (
                     <>
-                      <span className="text-[16px] text-[#9CA3AF] mx-1">·</span>
-                      <span className="text-[15px] text-[#9CA3AF]">{book.author}</span>
+                      <span className="text-[16px] text-[var(--muted)] mx-1">·</span>
+                      <span className="text-[15px] text-[var(--muted)]">{book.author}</span>
                     </>
                   )}
                 </div>
@@ -296,7 +296,7 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
             })}
             <button
               onClick={handleViewAllToRead}
-              className="mt-3 text-[12px] text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+              className="mt-3 text-[12px] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
             >
               View all to read ({toReadCount})
             </button>
@@ -307,7 +307,7 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
       {/* ── Filtered / paginated view ── */}
       {!isDefaultView && (
         <div>
-          <p className="text-[12px] text-[#9CA3AF] mb-4">
+          <p className="text-[12px] text-[var(--muted)] mb-4">
             {filteredBooks.length === 0
               ? 'No books found'
               : `Showing ${(page - 1) * ITEMS_PER_PAGE + 1} to ${Math.min(
@@ -329,13 +329,13 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
                 disabled={page === 1}
                 className={`transition-colors ${
                   page === 1
-                    ? 'text-[#9CA3AF] opacity-40 cursor-not-allowed'
-                    : 'text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+                    ? 'text-[var(--muted)] opacity-40 cursor-not-allowed'
+                    : 'text-[var(--muted)] hover:text-[var(--text)]'
                 }`}
               >
                 &larr; Previous
               </button>
-              <span className="text-[#9CA3AF]">
+              <span className="text-[var(--muted)]">
                 Page {page} of {totalPages}
               </span>
               <button
@@ -343,8 +343,8 @@ export default function BookshelfClient({ books }: BookshelfClientProps) {
                 disabled={page === totalPages}
                 className={`transition-colors ${
                   page === totalPages
-                    ? 'text-[#9CA3AF] opacity-40 cursor-not-allowed'
-                    : 'text-[#9CA3AF] hover:text-[#343D4D] dark:hover:text-[#F5F0E8]'
+                    ? 'text-[var(--muted)] opacity-40 cursor-not-allowed'
+                    : 'text-[var(--muted)] hover:text-[var(--text)]'
                 }`}
               >
                 Next &rarr;

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import React from 'react';
 import Image from 'next/image';
 import { SITE_URL } from '../../lib/site';
 import { LagosTime } from '@/components/LagosTime';
@@ -13,6 +14,7 @@ import { StickyCallBar } from '@/components/StickyCallBar';
 import { QuestionChips } from '@/components/QuestionChips';
 import { HeroAudienceParts } from '@/components/HeroAudienceParts';
 import { ProofStrip } from '@/components/ProofStrip';
+import { TrustRow } from '@/components/TrustRow';
 import { AudienceProvider } from '@/contexts/audience-context';
 import { hero } from '../../content/home';
 import { resolveAudienceKey } from '../../content/audiences';
@@ -78,11 +80,11 @@ export default async function AboutPage({
           />
 
           <div className="flex-1 min-w-0">
-            <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
+            <p className="font-mono text-[12px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-4">
               LAGOS &middot; <LagosTime /> &middot; TECHNICAL LEAD &amp; PRODUCT ENGINEER
             </p>
 
-            <h1 className="text-[clamp(1.75rem,5vw,2.5rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-tight mb-4">
+            <h1 className="text-[clamp(2.25rem,5vw+1rem,3.5rem)] font-semibold text-[var(--text)] leading-[1.08] tracking-[-0.025em] mb-4" style={{textWrap:'balance'} as React.CSSProperties}>
               {hero.h1}
             </h1>
 
@@ -94,7 +96,7 @@ export default async function AboutPage({
                 href={hero.calUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+                className="flex items-center justify-center w-full md:w-auto min-h-[44px] px-6 bg-[var(--button-bg)] text-[var(--button-fg)] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
               >
                 Book a call
               </a>
@@ -103,7 +105,7 @@ export default async function AboutPage({
 
             <a
               href="#services"
-              className="text-[14px] text-[var(--muted)] hover:text-[#343D4D] dark:hover:text-[#F5F0E8] transition-colors"
+              className="text-[14px] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
             >
               See services &darr;
             </a>
@@ -113,11 +115,14 @@ export default async function AboutPage({
         {/* ── Proof strip ──────────────────────────────── */}
         <ProofStrip />
 
-        {/* ── Question chips ───────────────────────────── */}
-        <QuestionChips />
+        {/* ── Trust row ────────────────────────────────── */}
+        <TrustRow />
 
         {/* ── Services ─────────────────────────────────── */}
         <ServicesSection />
+
+        {/* ── Question chips ───────────────────────────── */}
+        <QuestionChips />
 
         {/* ── Work ─────────────────────────────────────── */}
         <WorkSection />

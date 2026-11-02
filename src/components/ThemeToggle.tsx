@@ -13,8 +13,8 @@ export function ThemeToggle() {
         relative inline-flex items-center w-10 h-[22px] rounded-full
         transition-colors duration-200 focus:outline-none flex-shrink-0
         ${isDark
-          ? 'bg-[#343D4D] border border-[#4A5568]'
-          : 'bg-[#E5E7EB] border border-[#D1D5DB]'
+          ? 'bg-[var(--button-bg)] border border-[var(--border)]'
+          : 'bg-[var(--surface)] border border-[var(--border)]'
         }
       `}
     >
@@ -23,7 +23,7 @@ export function ThemeToggle() {
         className={`
           absolute w-4 h-4 rounded-full shadow-sm transition-transform duration-200
           ${isDark
-            ? 'translate-x-5 bg-[#F5F0E8]'
+            ? 'translate-x-5 bg-[var(--button-fg)]'
             : 'translate-x-1 bg-white'
           }
         `}

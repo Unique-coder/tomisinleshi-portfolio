@@ -25,7 +25,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Tahoma', 'Geneva', 'sans-serif'],
+        sans: ['var(--font-geist-sans)', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', '"Cascadia Code"', 'monospace'],
       },
       keyframes: {
         fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },

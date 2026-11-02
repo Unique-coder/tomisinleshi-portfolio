@@ -38,14 +38,14 @@ export function WritingSection() {
             data-umami-event="linkedin_post_click"
           >
             <div className="flex items-center justify-between gap-2">
-              <span className="text-[11px] tracking-[0.08em] font-medium uppercase text-[var(--muted)]">
+              <span className="text-[12px] tracking-[0.08em] font-medium uppercase text-[var(--muted)]">
                 LinkedIn
               </span>
-              <span className="text-[11px] font-medium text-[var(--muted)]">
+              <span className="text-[12px] font-medium text-[var(--muted)]">
                 {post.impressions} views
               </span>
             </div>
-            <p className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] leading-snug">
+            <p className="text-[15px] font-semibold text-[var(--text)] leading-snug">
               {post.title}
             </p>
             <p className="text-[13px] text-[var(--muted)] leading-[1.6] line-clamp-3">
@@ -66,7 +66,7 @@ export function WritingSection() {
             className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 py-4 no-underline group"
           >
             <div className="flex-1 min-w-0">
-              <span className="text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8] group-hover:text-[var(--accent)] transition-colors leading-snug block">
+              <span className="text-[15px] font-medium text-[var(--text)] group-hover:text-[var(--accent)] transition-colors leading-snug block">
                 {post.title}
               </span>
               <span className="text-[13px] text-[var(--muted)] leading-snug block mt-0.5">

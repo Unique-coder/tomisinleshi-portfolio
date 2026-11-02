@@ -18,19 +18,19 @@ export default function ExploringPage() {
   return (
     <div>
       {/* Header */}
-      <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
+      <h1 className="text-[1.5rem] font-normal text-[var(--text)] mb-1">
         Exploring
       </h1>
-      <p className="text-[15px] text-[#9CA3AF] mb-10">
+      <p className="text-[15px] text-[var(--muted)] mb-10">
         What I&apos;m thinking about. Where I&apos;m placing bets.
       </p>
 
       {/* Section 1 */}
       <div className="mb-10">
-        <h2 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-4">
+        <h2 className="text-[16px] font-semibold text-[var(--text)] mb-4">
           The infrastructure bet
         </h2>
-        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[var(--text)]">
           <p>
             Every major economy was built on the layer that came before the products.
             Roads. Energy grids. Banking systems. Africa is in that moment right now,
@@ -48,10 +48,10 @@ export default function ExploringPage() {
 
       {/* Section 2 */}
       <div className="mb-10">
-        <h2 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-4">
+        <h2 className="text-[16px] font-semibold text-[var(--text)] mb-4">
           Kingdom financing
         </h2>
-        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[var(--text)]">
           <p>
             There is a version of wealth and building that is not separated from
             purpose. The resources, the infrastructure, the systems. All of it can
@@ -67,10 +67,10 @@ export default function ExploringPage() {
       {/* Section 3 */}
       <hr className="border-t border-[var(--border)] mb-10" />
       <div className="mb-10">
-        <h2 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-4">
+        <h2 className="text-[16px] font-semibold text-[var(--text)] mb-4">
           What I&apos;m paying attention to
         </h2>
-        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <div className="flex flex-col gap-4 leading-[1.8] text-[16px] text-[var(--text)]">
           {attentionItems.map((item) => (
             <p key={item}>{item}</p>
           ))}

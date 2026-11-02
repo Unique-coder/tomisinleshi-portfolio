@@ -42,17 +42,17 @@ export default function WorldviewPage() {
   return (
     <div>
       {/* Header */}
-      <h1 className="text-[1.5rem] font-normal text-[#343D4D] dark:text-[#F5F0E8] mb-1">
+      <h1 className="text-[1.5rem] font-normal text-[var(--text)] mb-1">
         Worldview
       </h1>
-      <p className="text-[15px] text-[#9CA3AF] mb-10">
+      <p className="text-[15px] text-[var(--muted)] mb-10">
         Operating principles. How I see the game.
       </p>
 
       {/* Currently — moved from homepage */}
       <div className="mb-10 pb-8 border-b border-[var(--border)]">
-        <p className="text-[11px] tracking-[0.12em] font-medium uppercase text-[#9CA3AF] mb-3">Currently</p>
-        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[#343D4D] dark:text-[#F5F0E8]">
+        <p className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">Currently</p>
+        <div className="flex flex-col gap-3 leading-[1.8] text-[16px] text-[var(--text)]">
           <p>Building LINK&apos;s multi-currency payment corridors across Africa.</p>
           <p>
             Thinking about kingdom financing. What it means to build infrastructure
@@ -67,12 +67,12 @@ export default function WorldviewPage() {
         {principles.map((p, i) => (
           <div key={i}>
             {i > 0 && (
-              <hr className="border-t border-[#E5E7EB] dark:border-[#4A5568] my-8" />
+              <hr className="border-t border-[var(--border)] dark:border-[var(--border)] my-8" />
             )}
-            <h3 className="text-[16px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-3">
+            <h3 className="text-[16px] font-semibold text-[var(--text)] mb-3">
               {p.title}
             </h3>
-            <p className="text-[16px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.8]">
+            <p className="text-[16px] text-[var(--text)] leading-[1.8]">
               {p.body}
             </p>
           </div>

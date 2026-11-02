@@ -29,7 +29,7 @@ export default function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          backgroundColor: '#343D4D',
+          backgroundColor: '#0B0B0C',
           padding: '72px 80px',
           alignItems: 'center',
           gap: 60,
@@ -39,7 +39,7 @@ export default function Image() {
           <div
             style={{
               fontSize: 18,
-              color: '#9CA3AF',
+              color: '#A1A1AA',
               letterSpacing: '0.12em',
               marginBottom: 20,
               fontFamily: 'sans-serif',
@@ -51,7 +51,7 @@ export default function Image() {
             style={{
               fontSize: 64,
               fontWeight: 700,
-              color: '#F5F0E8',
+              color: '#EDEDEC',
               lineHeight: 1.1,
               fontFamily: 'sans-serif',
             }}
@@ -61,7 +61,7 @@ export default function Image() {
           <div
             style={{
               fontSize: 26,
-              color: '#9CA3AF',
+              color: '#A1A1AA',
               marginTop: 28,
               lineHeight: 1.5,
               fontFamily: 'sans-serif',

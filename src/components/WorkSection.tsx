@@ -17,7 +17,7 @@ function StatusPill({ status }: { status: Status }) {
     hackathon:    'bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)]',
   };
   return (
-    <span className={`text-[11px] font-medium tracking-wide px-2 py-0.5 rounded-full whitespace-nowrap ${cls[status]}`}>
+    <span className={`text-[12px] font-medium tracking-wide px-2 py-0.5 rounded-full whitespace-nowrap ${cls[status]}`}>
       {status}
     </span>
   );
@@ -104,7 +104,7 @@ function RoutingDiagram() {
   );
 }
 
-const sectionLabelCls = 'text-[11px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-1 block';
+const sectionLabelCls = 'text-[12px] tracking-[0.08em] font-medium uppercase text-[var(--muted)] mb-1 block';
 
 const paymentsItems = work.filter((w) => w.group === 'payments');
 const beyondItems   = work.filter((w) => w.group === 'beyond');
@@ -128,12 +128,12 @@ function PaymentsGroup() {
                   rel="noopener noreferrer"
                   data-umami-event="work_link_click"
                   data-umami-event-project={item.name}
-                  className="text-[17px] font-semibold text-[#343D4D] dark:text-[#F5F0E8] hover:text-[var(--accent)] transition-colors no-underline"
+                  className="text-[17px] font-semibold text-[var(--text)] hover:text-[var(--accent)] transition-colors no-underline"
                 >
                   {item.name} &rarr;
                 </a>
               ) : (
-                <h3 className="text-[17px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+                <h3 className="text-[17px] font-semibold text-[var(--text)]">
                   {item.name}
                 </h3>
               )}
@@ -145,14 +145,14 @@ function PaymentsGroup() {
             {item.problem && (
               <div className="mb-4">
                 <span className={sectionLabelCls}>Problem</span>
-                <p className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.75]">{item.problem}</p>
+                <p className="text-[15px] text-[var(--text)] leading-[1.75]">{item.problem}</p>
               </div>
             )}
             <div className="mb-4">
               <span className={sectionLabelCls}>Built</span>
               <ul className="flex flex-col gap-2">
                 {item.built.map((b) => (
-                  <li key={b} className="flex gap-2 text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.75]">
+                  <li key={b} className="flex gap-2 text-[15px] text-[var(--text)] leading-[1.75]">
                     <span className="text-[var(--muted)] shrink-0 select-none mt-0.5">→</span>
                     {b}
                   </li>
@@ -181,7 +181,7 @@ function PaymentsGroup() {
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
-                    <span className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+                    <span className="text-[15px] font-semibold text-[var(--text)]">
                       {item.name}
                     </span>
                     <StatusPill status={item.status} />
@@ -224,7 +224,7 @@ function BeyondGroup() {
           >
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
-                <span className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+                <span className="text-[15px] font-semibold text-[var(--text)]">
                   {item.name}
                 </span>
                 <StatusPill status={item.status} />
@@ -234,7 +234,7 @@ function BeyondGroup() {
                 {item.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-[11px] px-1.5 py-0.5 rounded border border-[var(--border)] text-[var(--muted)]"
+                    className="text-[12px] px-1.5 py-0.5 rounded border border-[var(--border)] text-[var(--muted)]"
                   >
                     {s}
                   </span>

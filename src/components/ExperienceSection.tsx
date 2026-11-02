@@ -23,7 +23,7 @@ export function ExperienceSection() {
           aria-expanded={open}
           className="w-full flex items-center justify-between py-4 text-left"
         >
-          <span className="text-[17px] font-bold text-[#343D4D] dark:text-[#F5F0E8]">
+          <span className="text-[17px] font-bold text-[var(--text)]">
             LINK GLOBAL
           </span>
           <ChevronRight
@@ -56,7 +56,7 @@ export function ExperienceSection() {
                   />
                   <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
                     <div className="flex-1">
-                      <h3 className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+                      <h3 className="text-[15px] font-semibold text-[var(--text)]">
                         {role.title}
                       </h3>
                       <ul className="mt-1 flex flex-col gap-1">
@@ -91,7 +91,7 @@ export function ExperienceSection() {
           {otherCompanies.map(({ name, role, years }) => (
             <div key={name} className="flex items-center justify-between py-3">
               <div>
-                <span className="text-[15px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">
+                <span className="text-[15px] font-medium text-[var(--text)]">
                   {name}
                 </span>
                 <span className="text-[13px] text-[var(--muted)] ml-3">{role}</span>

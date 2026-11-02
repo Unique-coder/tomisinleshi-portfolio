@@ -4,8 +4,8 @@
   "description": "I build the systems that move money across African borders.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#343D4D",
-  "theme_color": "#343D4D",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
   "orientation": "portrait-primary",
   "icons": [
     {

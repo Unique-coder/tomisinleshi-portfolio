@@ -23,7 +23,7 @@ export function QuestionChips() {
               className={`min-h-[44px] px-4 py-2 text-[13px] font-medium rounded-full border transition-colors text-left ${
                 isOpen
                   ? 'border-[var(--accent)] text-[var(--accent)] bg-[var(--surface)]'
-                  : 'border-[var(--border)] text-[#343D4D] dark:text-[#F5F0E8] hover:border-[var(--accent)] hover:text-[var(--accent)]'
+                  : 'border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)]'
               }`}
             >
               {q.chip}
@@ -49,7 +49,7 @@ export function QuestionChips() {
               className="min-h-0 overflow-hidden"
             >
               <div className="mt-3 p-4 rounded-md bg-[var(--surface)] border border-[var(--border)]">
-                <p className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.75] mb-3">
+                <p className="text-[15px] text-[var(--text)] leading-[1.75] mb-3">
                   {q.answer}
                 </p>
                 {q.linkHref && q.linkText && (

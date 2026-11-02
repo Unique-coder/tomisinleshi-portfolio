@@ -48,7 +48,7 @@ export function StickyCallBar() {
         href={hero.calUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-full min-h-[44px] bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+        className="flex items-center justify-center w-full min-h-[44px] bg-[var(--button-bg)] text-[var(--button-fg)] text-[15px] font-medium hover:opacity-90 transition-opacity rounded-sm"
       >
         Book a call
       </a>

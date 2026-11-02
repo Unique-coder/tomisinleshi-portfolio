@@ -58,7 +58,7 @@ export function CVLayout() {
         </div>
         <button
           onClick={downloadPDF}
-          className="min-h-[44px] px-5 bg-[#343D4D] dark:bg-[#F5F0E8] text-[#F5F0E8] dark:text-[#343D4D] text-[14px] font-medium hover:opacity-90 transition-opacity rounded-sm"
+          className="min-h-[44px] px-5 bg-[var(--button-bg)] text-[var(--button-fg)] text-[14px] font-medium hover:opacity-90 transition-opacity rounded-sm"
         >
           Download PDF
         </button>
@@ -69,7 +69,7 @@ export function CVLayout() {
 
         {/* Header */}
         <div className="mb-8 pb-6 border-b border-[var(--border)]">
-          <h1 className="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-[#343D4D] dark:text-[#F5F0E8] mb-1">
+          <h1 className="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-[var(--text)] mb-1">
             Tomisin Leshi
           </h1>
           <p className="text-[15px] text-[var(--muted)] mb-3">{variant.positioning}</p>
@@ -89,22 +89,22 @@ export function CVLayout() {
 
         {/* Value Insight */}
         <section className="mb-8">
-          <h2 className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
+          <h2 className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
             Value Insight
           </h2>
-          <p className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.8]">
+          <p className="text-[15px] text-[var(--text)] leading-[1.8]">
             {variant.valueInsight}
           </p>
         </section>
 
         {/* Proof of Work */}
         <section className="mb-8">
-          <h2 className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
+          <h2 className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
             Proof of Work
           </h2>
           <ol className="flex flex-col gap-3 list-none p-0">
             {variant.proofOfWork.map((item, i) => (
-              <li key={i} className="flex gap-3 text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-snug">
+              <li key={i} className="flex gap-3 text-[15px] text-[var(--text)] leading-snug">
                 <span className="text-[var(--muted)] shrink-0 tabular-nums">{i + 1}:</span>
                 {item}
               </li>
@@ -114,7 +114,7 @@ export function CVLayout() {
 
         {/* Where I Worked */}
         <section className="mb-8">
-          <h2 className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
+          <h2 className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
             Where I Worked
           </h2>
 
@@ -122,7 +122,7 @@ export function CVLayout() {
           <div className="mb-6">
             <div className="flex items-baseline justify-between gap-4 mb-3">
               <div>
-                <span className="text-[17px] font-bold text-[#343D4D] dark:text-[#F5F0E8]">
+                <span className="text-[17px] font-bold text-[var(--text)]">
                   LINK GLOBAL
                 </span>
                 <a
@@ -140,7 +140,7 @@ export function CVLayout() {
               {roles.map((role) => (
                 <div key={role.title}>
                   <div className="flex items-baseline justify-between gap-4">
-                    <span className="text-[14px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">
+                    <span className="text-[14px] font-medium text-[var(--text)]">
                       {role.title}
                     </span>
                     <span className="text-[12px] text-[var(--muted)] shrink-0">{role.years}</span>
@@ -164,7 +164,7 @@ export function CVLayout() {
               <div key={name} className="py-2">
                 <div className="flex items-baseline justify-between gap-4">
                   <div>
-                    <span className="text-[14px] font-medium text-[#343D4D] dark:text-[#F5F0E8]">{name}</span>
+                    <span className="text-[14px] font-medium text-[var(--text)]">{name}</span>
                     <span className="text-[13px] text-[var(--muted)] ml-2">{role}</span>
                   </div>
                   <span className="text-[12px] text-[var(--muted)] shrink-0 ml-4">{years}</span>
@@ -177,10 +177,10 @@ export function CVLayout() {
 
         {/* How I Build */}
         <section className="mb-8">
-          <h2 className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
+          <h2 className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-3">
             How I Build
           </h2>
-          <p className="text-[15px] text-[#343D4D] dark:text-[#F5F0E8] leading-[1.8] mb-4">
+          <p className="text-[15px] text-[var(--text)] leading-[1.8] mb-4">
             {stackPatterns}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -197,14 +197,14 @@ export function CVLayout() {
 
         {/* Education */}
         <section className="mb-8">
-          <h2 className="text-[11px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
+          <h2 className="text-[12px] tracking-[0.12em] font-medium uppercase text-[var(--muted)] mb-4">
             Education
           </h2>
           <div className="flex flex-col gap-4">
             {education.map((ed) => (
               <div key={ed.institution}>
                 <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-[15px] font-semibold text-[#343D4D] dark:text-[#F5F0E8]">
+                  <span className="text-[15px] font-semibold text-[var(--text)]">
                     {ed.institution}
                   </span>
                   <span className="text-[12px] text-[var(--muted)] shrink-0">{ed.years}</span>
